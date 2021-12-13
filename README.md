@@ -8,6 +8,10 @@ Note: Vergeet niet de build settings op android te zetten indien je op oculus wi
 
 ## Afspraken
 
+### Unity version
+
+2020.3.24f1
+
 ### Asset folder structure 
 
 Scenes
