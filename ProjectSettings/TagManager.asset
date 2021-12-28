@@ -8,14 +8,15 @@ TagManager:
   - Trail
   - TurretGimbal
   - Target
+  - Grabbable
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Grabbable
   - Water
   - UI
-  - 
+  - Player
   - 
   - 
   - 
