@@ -50,42 +50,31 @@ public class MLAgent : Agent
 
     public override void OnActionReceived(ActionBuffers actions)
     {
-        // Debug.Log("OnActionReceived");
+        Debug.Log("OnActionReceived");
 
         var vectorAction = actions.DiscreteActions;
 
         Vector3 rotation = Vector3.zero;
 
         // horizontal rotation arm - Y
-        if(vectorAction[0] != 0)
+        if (vectorAction[0] != 0)
         {
-            float bodyRotation = RotationSpeed * (vectorAction[0] * 2 - 3) * Time.deltaTime;
-            rotation.y = bodyRotation;
-            // Debug.Log("Rotate Body - " + vectorAction[0] + " | " + rotation);
-            // transform.Rotate(0, bodyRotation, 0);*/
-        }
-
-        // horizontal rotation arm - Y
-        if (vectorAction[1] != 0)
-        {
-            rotation.y = ArmRotationSpeed * (vectorAction[1] * 2 - 3) * Time.deltaTime;
-            // Debug.Log("Rotate Arm Horizontal - " + vectorAction[1] + " | " + rotation.y);
+            rotation.y = ArmRotationSpeed * (vectorAction[0] * 2 - 3) * Time.deltaTime;
+            Debug.Log("Rotate Arm Horizontal - " + vectorAction[0] + " | " + rotation.y);
         }
 
         // vertical rotation arm    - X
-        if(vectorAction[2] != 0)
+        if(vectorAction[1] != 0)
         {
-            rotation.z = ArmRotationSpeed * (vectorAction[2] * 2 - 3) * Time.deltaTime;
-            // Debug.Log("Rotate Arm Vertical - " + vectorAction[2] + " | " + rotation.z);
+            rotation.z = ArmRotationSpeed * (vectorAction[1] * 2 - 3) * Time.deltaTime;
+            Debug.Log("Rotate Arm Vertical - " + vectorAction[1] + " | " + rotation.z);
         }
-
-        Debug.Log(vectorAction[2]);
 
         // shoot
         if(vectorAction[2] != 0)
         {
             shoot.Fire();
-            // Debug.Log("Shoot - " + vectorAction[3]);
+            Debug.Log("Shoot - " + vectorAction[2]);
         }
 
         transform.parent.Rotate(0, rotation.y, 0);
@@ -97,52 +86,39 @@ public class MLAgent : Agent
     {
         var keyboard = Keyboard.current;
 
-        // Debug.Log("Heuristic");
+        Debug.Log("Heuristic");
         var actions = actionsOut.DiscreteActions;
         
         actions[0] = 0;
-        if (keyboard.qKey.isPressed)
-        {
-            // Debug.Log("Input - Turn Left");
-            actions[0] = 1;     // left turn
-        }
-        else if (keyboard.dKey.isPressed)
-        {
-            // Debug.Log("Input - Turn Right");
-            actions[0] = 2;     // right turn
-        }
-
-        
-        actions[1] = 0;
         if(keyboard.xKey.isPressed)
         {
-            // Debug.Log("Input - Arm Turn Left");
-            actions[1] = 1;     // left turn
+            Debug.Log("Input - Arm Turn Left");
+            actions[0] = 1;     // left turn
         }
         else if (keyboard.cKey.isPressed)
         {
-            // Debug.Log("Input - Arm Turn Right");
-            actions[1] = 2;     // turn right
+            Debug.Log("Input - Arm Turn Right");
+            actions[0] = 2;     // turn right
         }
 
         
         actions[1] = 0;
         if (keyboard.upArrowKey.isPressed)
         {
-            // Debug.Log("Input - Arm Turn Left");
-            actions[2] = 1;     // left up
+            Debug.Log("Input - Arm Turn Up");
+            actions[1] = 1;     // left up
         }
         else if (keyboard.downArrowKey.isPressed)
         {
-            // Debug.Log("Input - Arm Turn Right");
-            actions[2] = 2;     // turn down
+            Debug.Log("Input - Arm Turn Down");
+            actions[1] = 2;     // turn down
         }
 
         actions[2] = 0;
         if (keyboard.spaceKey.isPressed)
         {
-            // Debug.Log("Input - Shoot");
-            actions[3] = 1;     // shoot
+            Debug.Log("Input - Shoot");
+            actions[2] = 1;     // shoot
         }
     }
 }
