@@ -4814,10 +4814,14 @@ PrefabInstance:
     - target: {fileID: 82291125, guid: dd826943619b1ea42a6308c51f452034, type: 3}
       propertyPath: sound
       value: 
-      objectReference: {fileID: 1143740533}
+      objectReference: {fileID: 1143740539}
     - target: {fileID: 2294642293984736759, guid: dd826943619b1ea42a6308c51f452034, type: 3}
       propertyPath: m_Name
       value: Turret
+      objectReference: {fileID: 0}
+    - target: {fileID: 3286854572424343549, guid: dd826943619b1ea42a6308c51f452034, type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6576735197590006399, guid: dd826943619b1ea42a6308c51f452034, type: 3}
       propertyPath: m_RootOrder
@@ -8980,7 +8984,7 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 3885783018103173667, guid: dd826943619b1ea42a6308c51f452034, type: 3}
   m_PrefabInstance: {fileID: 551935595}
   m_PrefabAsset: {fileID: 0}
---- !u!82 &1143740533
+--- !u!82 &1143740539
 AudioSource:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
