@@ -23,6 +23,7 @@ public class Pooling : MonoBehaviour
     public GameObject GetObject(bool active = true)
     {
         var go = objects[current];
+        current = (current + 1) % Total;
         go.SetActive(active);
         return go;
     }
