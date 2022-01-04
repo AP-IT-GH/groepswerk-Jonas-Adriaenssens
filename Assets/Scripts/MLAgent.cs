@@ -30,6 +30,11 @@ public class MLAgent : Agent
         shoot = gameObject.GetComponent<Shoot>();
     }
 
+    internal void Miss()
+    {
+        AddReward(-1f); 
+    }
+
     // Update is called once per frame
     void Update()
     {
@@ -51,7 +56,7 @@ public class MLAgent : Agent
 
     internal void hit()
     {
-        //TODO: give points
+        AddReward(1f); 
 
     }
 
@@ -68,6 +73,9 @@ public class MLAgent : Agent
         {
             rotation.y = ArmRotationSpeed * (vectorAction[0] * 2 - 3) * Time.deltaTime;
             Debug.Log("Rotate Arm Horizontal - " + vectorAction[0] + " | " + rotation.y);
+
+            AddReward(0.001f);
+
         }
 
         // vertical rotation arm    - X
@@ -75,6 +83,10 @@ public class MLAgent : Agent
         {
             rotation.z = ArmRotationSpeed * (vectorAction[1] * 2 - 3) * Time.deltaTime;
             Debug.Log("Rotate Arm Vertical - " + vectorAction[1] + " | " + rotation.z);
+
+
+            AddReward(0.001f);
+
         }
 
         // shoot
