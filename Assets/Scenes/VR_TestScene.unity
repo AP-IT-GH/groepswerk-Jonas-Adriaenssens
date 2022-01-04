@@ -4807,6 +4807,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1954115800}
     m_Modifications:
+    - target: {fileID: 82291125, guid: dd826943619b1ea42a6308c51f452034, type: 3}
+      propertyPath: projectileSpeed
+      value: 100
+      objectReference: {fileID: 0}
     - target: {fileID: 2294642293984736759, guid: dd826943619b1ea42a6308c51f452034, type: 3}
       propertyPath: m_Name
       value: Turret

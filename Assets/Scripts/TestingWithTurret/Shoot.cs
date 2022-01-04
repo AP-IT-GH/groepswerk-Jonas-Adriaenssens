@@ -5,7 +5,7 @@ using UnityEngine;
 public class Shoot : Weapon
 {
     public GameObject projectile;
-    public float projectileSpeed = 20f;
+    public float projectileSpeed = 100f;
     [SerializeField] private ParticleSystem Flash;
     [SerializeField] private AudioSource sound;
 
@@ -29,7 +29,7 @@ public class Shoot : Weapon
 
         var pj = newProjectile.GetComponent<Projectile>();
         pj.Init(this);
-        pj.Launch();
+        pj.Launch(projectileSpeed);
         lastShot = Time.time;
     }
 }

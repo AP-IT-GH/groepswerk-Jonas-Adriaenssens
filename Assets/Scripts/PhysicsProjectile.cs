@@ -19,8 +19,9 @@ public class PhysicsProjectile : Projectile
         Destroy(gameObject, lifeTime);
     }
 
-    public override void Launch()
+    public override void Launch(float bulletspeed = 100f)
     {
+        // ShootingForce = recoil
         base.Launch();
         rigidbody.AddRelativeForce(Vector3.forward * weapon.GetShootingForce(), ForceMode.Impulse);
     }
