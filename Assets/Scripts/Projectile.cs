@@ -14,9 +14,9 @@ public class Projectile : MonoBehaviour
         Spawned = Time.time;
     }
 
-    public virtual void Launch()
+    public virtual void Launch(float bulletspeed = 100f)
     {
-        GetComponent<Rigidbody>().AddForce(transform.forward * 10, ForceMode.VelocityChange);
+        GetComponent<Rigidbody>().AddForce(transform.forward * bulletspeed, ForceMode.VelocityChange);
     }
 
     private void Update()
