@@ -56,7 +56,7 @@ public class MLAgent : Agent
 
         Vector3 rotation = Vector3.zero;
 
-        // rotate body
+        // horizontal rotation arm - Y
         if(vectorAction[0] != 0)
         {
             float bodyRotation = RotationSpeed * (vectorAction[0] * 2 - 3) * Time.deltaTime;
@@ -82,7 +82,7 @@ public class MLAgent : Agent
         Debug.Log(vectorAction[2]);
 
         // shoot
-        if(vectorAction[3] != 0)
+        if(vectorAction[2] != 0)
         {
             shoot.Fire();
             // Debug.Log("Shoot - " + vectorAction[3]);
@@ -99,7 +99,7 @@ public class MLAgent : Agent
 
         // Debug.Log("Heuristic");
         var actions = actionsOut.DiscreteActions;
-
+        
         actions[0] = 0;
         if (keyboard.qKey.isPressed)
         {
@@ -126,7 +126,7 @@ public class MLAgent : Agent
         }
 
         
-        actions[2] = 0;
+        actions[1] = 0;
         if (keyboard.upArrowKey.isPressed)
         {
             // Debug.Log("Input - Arm Turn Left");
@@ -138,7 +138,7 @@ public class MLAgent : Agent
             actions[2] = 2;     // turn down
         }
 
-        actions[3] = 0;
+        actions[2] = 0;
         if (keyboard.spaceKey.isPressed)
         {
             // Debug.Log("Input - Shoot");
