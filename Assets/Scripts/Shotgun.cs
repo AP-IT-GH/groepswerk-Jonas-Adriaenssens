@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.XR.Interaction.Toolkit;
+using UnityEngine.InputSystem;
 
 public class Shotgun : Weapon
 {
@@ -28,5 +29,14 @@ public class Shotgun : Weapon
     protected override void StopShooting(DeactivateEventArgs arg0)
     {
 
+    }
+
+    private void Update()
+    {
+        var k = Keyboard.current;
+        if (k.fKey.wasPressedThisFrame)
+        {
+            Shoot();
+        }
     }
 }
