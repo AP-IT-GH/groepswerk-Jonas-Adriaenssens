@@ -2,36 +2,28 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Shoot : MonoBehaviour
+public class Shoot : Weapon
 {
-
     public GameObject projectile;
     public float projectileSpeed = 20f;
-    public GameObject bulletSpawn; 
+
+    private float lastShot = 0;
 
     public void Fire()
     {
         Debug.Log("Shoot.Fire() called");
 
+        if (Time.time - lastShot <= 1f)
+        {
+            Debug.Log("No shoot");
+            return;
+        }
+
         GameObject newProjectile = Instantiate(projectile, bulletSpawn.transform.position, bulletSpawn.transform.rotation);
-        newProjectile.GetComponent<Rigidbody>().AddForce(transform.forward * projectileSpeed, ForceMode.VelocityChange);
+        newProjectile.transform.localScale = newProjectile.transform.localScale * 2f;
+        var pj = newProjectile.GetComponent<Projectile>();
+        pj.Init(this);
+        pj.Launch();
+        lastShot = Time.time;
     }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 }
