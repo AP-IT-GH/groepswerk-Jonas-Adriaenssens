@@ -4,10 +4,12 @@ using TMPro;
 using Unity.MLAgents;
 using Unity.MLAgents.Actuators;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class MLAgent : Agent
 {
-    public GameObject Arm;
+    private Shoot shoot;
+
     public TextMeshPro ScoreBoard;
 
     public float RotationSpeed;
@@ -17,17 +19,13 @@ public class MLAgent : Agent
     private int oldScore = 0;
     private int oldPunishment = 0;
 
-    Rigidbody body;
-    Rigidbody arm;
-
     // Start is called before the first frame update
     void Start()
     {
-        body = GetComponent<Rigidbody>();
-        arm = Arm.GetComponent<Rigidbody>();
-
         if (!scoreHelper)
             scoreHelper = gameObject.GetComponentInParent<ScoreHelper>();
+
+        shoot = gameObject.GetComponent<Shoot>();
     }
 
     // Update is called once per frame
@@ -75,64 +73,69 @@ public class MLAgent : Agent
         // vertical rotation arm    - X
         if(vectorAction[2] != 0)
         {
-            rotation.x = ArmRotationSpeed * (vectorAction[2] * 2 - 3) * Time.deltaTime;
-            Debug.Log("Rotate Arm Horizontal - " + vectorAction[2] + " | " + rotation.x);
+            rotation.z = ArmRotationSpeed * (vectorAction[2] * 2 - 3) * Time.deltaTime;
+            Debug.Log("Rotate Arm Vertical - " + vectorAction[2] + " | " + rotation.z);
         }
+
+        Debug.Log(vectorAction[2]);
 
         // shoot
         if(vectorAction[3] != 0)
         {
+            shoot.Fire();
             Debug.Log("Shoot - " + vectorAction[3]);
         }
 
-        arm.transform.Rotate(rotation);
+        transform.Rotate(rotation);
     }
 
     public override void Heuristic(in ActionBuffers actionsOut)
     {
+        var keyboard = Keyboard.current;
+
         Debug.Log("Heuristic");
         var actions = actionsOut.DiscreteActions;
 
         actions[0] = 0;
-        if (Input.GetKey(KeyCode.Q))
+        if (keyboard.qKey.isPressed)
         {
             Debug.Log("Input - Turn Left");
             actions[0] = 1;     // left turn
         }
-        else if (Input.GetKey(KeyCode.D))
+        else if (keyboard.dKey.isPressed)
         {
             Debug.Log("Input - Turn Right");
             actions[0] = 2;     // right turn
         }
 
-
+        
         actions[1] = 0;
-        if(Input.GetKey(KeyCode.LeftArrow))
+        if(keyboard.xKey.isPressed)
         {
             Debug.Log("Input - Arm Turn Left");
             actions[1] = 1;     // left turn
         }
-        else if (Input.GetKey(KeyCode.RightArrow))
+        else if (keyboard.cKey.isPressed)
         {
             Debug.Log("Input - Arm Turn Right");
             actions[1] = 2;     // turn right
         }
 
-
+        
         actions[2] = 0;
-        if (Input.GetKey(KeyCode.UpArrow))
+        if (keyboard.upArrowKey.isPressed)
         {
             Debug.Log("Input - Arm Turn Left");
             actions[2] = 1;     // left up
         }
-        else if (Input.GetKey(KeyCode.DownArrow))
+        else if (keyboard.downArrowKey.isPressed)
         {
             Debug.Log("Input - Arm Turn Right");
             actions[2] = 2;     // turn down
         }
 
         actions[3] = 0;
-        if (Input.GetKey(KeyCode.Space))
+        if (keyboard.spaceKey.isPressed)
         {
             Debug.Log("Input - Shoot");
             actions[3] = 1;     // shoot
