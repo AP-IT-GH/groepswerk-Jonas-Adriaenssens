@@ -26,4 +26,31 @@ public class Projectile : MonoBehaviour
             DestroyObject(gameObject);
         }
     }
+
+
+
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if(collision.gameObject.tag == "Target")
+        {
+            if(weapon.gameObject.tag == "AI")
+            {
+                weapon.gameObject.GetComponent<MLAgent>().hit();
+                ScoreKeeper.instance.playerHit(); 
+            } else
+
+            {
+                ScoreKeeper.instance.playerHit(); 
+            }
+
+            collision.transform.gameObject.SetActive(false); 
+            Destroy(gameObject);       
+           
+        }
+
+    }
+
+
+
 }

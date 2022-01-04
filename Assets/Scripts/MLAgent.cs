@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -46,6 +47,12 @@ public class MLAgent : Agent
 
         oldScore = 0;
         oldPunishment = 0;
+    }
+
+    internal void hit()
+    {
+        //TODO: give points
+
     }
 
     public override void OnActionReceived(ActionBuffers actions)
