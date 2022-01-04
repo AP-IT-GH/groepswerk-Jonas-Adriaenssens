@@ -23,6 +23,12 @@ public class Projectile : MonoBehaviour
     {
         if(Time.time - Spawned > TTL)
         {
+
+            if (weapon.gameObject.tag == "AI")
+            {
+                weapon.gameObject.GetComponent<MLAgent>().Miss();
+            }
+
             DestroyObject(gameObject);
         }
     }
