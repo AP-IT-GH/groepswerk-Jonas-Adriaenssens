@@ -4760,7 +4760,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pool: {fileID: 1836570386}
-  MinTimeWait: 1
+  MinTimeWait: 2
   MaxTimeWait: 5
 --- !u!4 &523114626
 Transform:

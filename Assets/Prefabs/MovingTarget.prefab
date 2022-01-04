@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 873874836717912468}
   m_Layer: 0
   m_Name: MovingTarget
-  m_TagString: Untagged
+  m_TagString: Target
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -44,7 +44,7 @@ GameObject:
   - component: {fileID: 4507623368731943786}
   m_Layer: 0
   m_Name: Target
-  m_TagString: Untagged
+  m_TagString: Target
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -77,7 +77,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f848a426d66d59941a57b8728fbdbeae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MovementSpeed: 50
+  MovementSpeed: 15
 --- !u!82 &4507623368731943786
 AudioSource:
   m_ObjectHideFlags: 0
@@ -278,6 +278,10 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2228964285373940243, guid: f869abb8cccd8dd42bdf58012daaaf33, type: 3}
       propertyPath: m_Name
+      value: Target
+      objectReference: {fileID: 0}
+    - target: {fileID: 2228964285373940243, guid: f869abb8cccd8dd42bdf58012daaaf33, type: 3}
+      propertyPath: m_TagString
       value: Target
       objectReference: {fileID: 0}
     - target: {fileID: 4751843331798888587, guid: f869abb8cccd8dd42bdf58012daaaf33, type: 3}

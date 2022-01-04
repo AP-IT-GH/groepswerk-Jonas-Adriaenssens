@@ -44,7 +44,7 @@ public class Projectile : MonoBehaviour
                 ScoreKeeper.instance.playerHit(); 
             }
 
-            Destroy(collision.gameObject);
+            collision.transform.gameObject.SetActive(false); 
             Destroy(gameObject);       
            
         }
