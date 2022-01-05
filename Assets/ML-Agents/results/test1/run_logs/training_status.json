@@ -2,15 +2,6 @@
     "Skeet": {
         "checkpoints": [
             {
-                "steps": 1499997,
-                "file_path": "results\\test1\\Skeet\\Skeet-1499997.onnx",
-                "reward": null,
-                "creation_time": 1641375788.1146402,
-                "auxillary_file_paths": [
-                    "results\\test1\\Skeet\\Skeet-1499997.pt"
-                ]
-            },
-            {
                 "steps": 1999998,
                 "file_path": "results\\test1\\Skeet\\Skeet-1999998.onnx",
                 "reward": null,
@@ -45,15 +36,24 @@
                 "auxillary_file_paths": [
                     "results\\test1\\Skeet\\Skeet-2573420.pt"
                 ]
+            },
+            {
+                "steps": 2587484,
+                "file_path": "results\\test1\\Skeet\\Skeet-2587484.onnx",
+                "reward": null,
+                "creation_time": 1641391015.166937,
+                "auxillary_file_paths": [
+                    "results\\test1\\Skeet\\Skeet-2587484.pt"
+                ]
             }
         ],
         "final_checkpoint": {
-            "steps": 2573420,
+            "steps": 2587484,
             "file_path": "results\\test1\\Skeet.onnx",
             "reward": null,
-            "creation_time": 1641384583.7256315,
+            "creation_time": 1641391015.166937,
             "auxillary_file_paths": [
-                "results\\test1\\Skeet\\Skeet-2573420.pt"
+                "results\\test1\\Skeet\\Skeet-2587484.pt"
             ]
         }
     },
