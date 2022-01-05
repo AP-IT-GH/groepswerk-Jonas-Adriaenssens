@@ -38,4 +38,6 @@ TEST2:
 		
 	BIJ HET TESTEN : het model denkt meer na over de movement en schiet al enkele targets maar nog niet te significant 
 			dit ziet er veelbelovend uit na meer training
+
+	attempt 2: 16 environments & resume
 		

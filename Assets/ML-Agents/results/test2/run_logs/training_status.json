@@ -18,15 +18,24 @@
                 "auxillary_file_paths": [
                     "results\\test2\\Skeet\\Skeet-703960.pt"
                 ]
+            },
+            {
+                "steps": 966212,
+                "file_path": "results\\test2\\Skeet\\Skeet-966212.onnx",
+                "reward": null,
+                "creation_time": 1641403949.3333,
+                "auxillary_file_paths": [
+                    "results\\test2\\Skeet\\Skeet-966212.pt"
+                ]
             }
         ],
         "final_checkpoint": {
-            "steps": 703960,
+            "steps": 966212,
             "file_path": "results\\test2\\Skeet.onnx",
             "reward": null,
-            "creation_time": 1641395652.9845154,
+            "creation_time": 1641403949.3333,
             "auxillary_file_paths": [
-                "results\\test2\\Skeet\\Skeet-703960.pt"
+                "results\\test2\\Skeet\\Skeet-966212.pt"
             ]
         }
     },
