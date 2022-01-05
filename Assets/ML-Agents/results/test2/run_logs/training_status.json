@@ -2,15 +2,6 @@
     "Skeet": {
         "checkpoints": [
             {
-                "steps": 499999,
-                "file_path": "results\\test2\\Skeet\\Skeet-499999.onnx",
-                "reward": null,
-                "creation_time": 1641394307.16683,
-                "auxillary_file_paths": [
-                    "results\\test2\\Skeet\\Skeet-499999.pt"
-                ]
-            },
-            {
                 "steps": 703960,
                 "file_path": "results\\test2\\Skeet\\Skeet-703960.onnx",
                 "reward": null,
@@ -27,15 +18,42 @@
                 "auxillary_file_paths": [
                     "results\\test2\\Skeet\\Skeet-966212.pt"
                 ]
+            },
+            {
+                "steps": 999997,
+                "file_path": "results\\test2\\Skeet\\Skeet-999997.onnx",
+                "reward": null,
+                "creation_time": 1641404514.9840374,
+                "auxillary_file_paths": [
+                    "results\\test2\\Skeet\\Skeet-999997.pt"
+                ]
+            },
+            {
+                "steps": 1499998,
+                "file_path": "results\\test2\\Skeet\\Skeet-1499998.onnx",
+                "reward": null,
+                "creation_time": 1641407115.6528633,
+                "auxillary_file_paths": [
+                    "results\\test2\\Skeet\\Skeet-1499998.pt"
+                ]
+            },
+            {
+                "steps": 1820052,
+                "file_path": "results\\test2\\Skeet\\Skeet-1820052.onnx",
+                "reward": null,
+                "creation_time": 1641408912.4567165,
+                "auxillary_file_paths": [
+                    "results\\test2\\Skeet\\Skeet-1820052.pt"
+                ]
             }
         ],
         "final_checkpoint": {
-            "steps": 966212,
+            "steps": 1820052,
             "file_path": "results\\test2\\Skeet.onnx",
             "reward": null,
-            "creation_time": 1641403949.3333,
+            "creation_time": 1641408912.4567165,
             "auxillary_file_paths": [
-                "results\\test2\\Skeet\\Skeet-966212.pt"
+                "results\\test2\\Skeet\\Skeet-1820052.pt"
             ]
         }
     },

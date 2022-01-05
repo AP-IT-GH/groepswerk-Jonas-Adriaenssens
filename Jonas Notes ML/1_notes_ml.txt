@@ -40,4 +40,10 @@ TEST2:
 			dit ziet er veelbelovend uit na meer training
 
 	attempt 2: 16 environments & resume
+			stopped at 702 000 (prob crash cuz ran out of ram) 
+			
+	
+	attempt 3: TODO: remove reward for moving and shooting
+				increase hit reward? 
+				
 		
