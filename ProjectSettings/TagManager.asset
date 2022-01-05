@@ -9,6 +9,7 @@ TagManager:
   - TurretGimbal
   - Target
   - Grabbable
+  - AI
   layers:
   - Default
   - TransparentFX
