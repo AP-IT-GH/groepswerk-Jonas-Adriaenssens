@@ -2,24 +2,6 @@
     "Skeet": {
         "checkpoints": [
             {
-                "steps": 499998,
-                "file_path": "results\\test1\\Skeet\\Skeet-499998.onnx",
-                "reward": null,
-                "creation_time": 1641333951.2989514,
-                "auxillary_file_paths": [
-                    "results\\test1\\Skeet\\Skeet-499998.pt"
-                ]
-            },
-            {
-                "steps": 701472,
-                "file_path": "results\\test1\\Skeet\\Skeet-701472.onnx",
-                "reward": null,
-                "creation_time": 1641335188.0847368,
-                "auxillary_file_paths": [
-                    "results\\test1\\Skeet\\Skeet-701472.pt"
-                ]
-            },
-            {
                 "steps": 999999,
                 "file_path": "results\\test1\\Skeet\\Skeet-999999.onnx",
                 "reward": null,
@@ -36,15 +18,42 @@
                 "auxillary_file_paths": [
                     "results\\test1\\Skeet\\Skeet-1469136.pt"
                 ]
+            },
+            {
+                "steps": 1499997,
+                "file_path": "results\\test1\\Skeet\\Skeet-1499997.onnx",
+                "reward": null,
+                "creation_time": 1641375788.1146402,
+                "auxillary_file_paths": [
+                    "results\\test1\\Skeet\\Skeet-1499997.pt"
+                ]
+            },
+            {
+                "steps": 1999998,
+                "file_path": "results\\test1\\Skeet\\Skeet-1999998.onnx",
+                "reward": null,
+                "creation_time": 1641379339.60384,
+                "auxillary_file_paths": [
+                    "results\\test1\\Skeet\\Skeet-1999998.pt"
+                ]
+            },
+            {
+                "steps": 2195460,
+                "file_path": "results\\test1\\Skeet\\Skeet-2195460.onnx",
+                "reward": null,
+                "creation_time": 1641380752.1928594,
+                "auxillary_file_paths": [
+                    "results\\test1\\Skeet\\Skeet-2195460.pt"
+                ]
             }
         ],
         "final_checkpoint": {
-            "steps": 1469136,
+            "steps": 2195460,
             "file_path": "results\\test1\\Skeet.onnx",
             "reward": null,
-            "creation_time": 1641374844.170382,
+            "creation_time": 1641380752.1928594,
             "auxillary_file_paths": [
-                "results\\test1\\Skeet\\Skeet-1469136.pt"
+                "results\\test1\\Skeet\\Skeet-2195460.pt"
             ]
         }
     },
