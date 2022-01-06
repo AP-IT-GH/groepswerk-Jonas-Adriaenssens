@@ -9,8 +9,6 @@ public class Projectile : MonoBehaviour
     private float Spawned;
 
 
-    private bool safeguard = true; 
-
     public virtual void Init(Weapon weapon)
     {
         this.weapon = weapon;
@@ -26,17 +24,18 @@ public class Projectile : MonoBehaviour
     {
         if(Time.time - Spawned > TTL)
         {
+            if(weapon != null)
+            {
 
             if (weapon.gameObject.tag == "AI")
             {
                 weapon.gameObject.GetComponent<MLAgent>().Miss();
             }
-             
-            if(safeguard)
-            {
-                Object.Destroy(gameObject);
+
             }
 
+                Object.Destroy(gameObject);
+            
         }
     }
 
@@ -58,8 +57,6 @@ public class Projectile : MonoBehaviour
             }
 
             collision.gameObject.GetComponentInParent<MovingTarget>().gameObject.SetActive(false);
-
-            safeguard = false; 
 
             Destroy(gameObject);       
            
