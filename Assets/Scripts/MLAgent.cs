@@ -19,6 +19,8 @@ public class MLAgent : Agent
 
     private ScoreKeeper scoreKeeper;
 
+    public LayerMask aidLayer; 
+
     // Start is called before the first frame update
     void Start()
     {
@@ -38,6 +40,18 @@ public class MLAgent : Agent
     {
         if (ScoreBoard != null)
             ScoreBoard.text = GetCumulativeReward().ToString("f4");
+
+        //helping with training throug raycast
+        RaycastHit hit; 
+
+        if(Physics.Raycast(transform.position, transform.right, out hit, 30, aidLayer))
+        {
+            AddReward(0.5f);
+            Debug.Log("Raycast aider did hit"); 
+            Debug.DrawLine(transform.position, hit.point); 
+        }
+
+
     }
 
     public override void OnEpisodeBegin()
