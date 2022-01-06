@@ -8,6 +8,9 @@ public class Projectile : MonoBehaviour
     [SerializeField] private float TTL = 3;
     private float Spawned;
 
+
+    private bool safeguard = true; 
+
     public virtual void Init(Weapon weapon)
     {
         this.weapon = weapon;
@@ -28,8 +31,12 @@ public class Projectile : MonoBehaviour
             {
                 weapon.gameObject.GetComponent<MLAgent>().Miss();
             }
+             
+            if(safeguard)
+            {
+                Object.Destroy(gameObject);
+            }
 
-            DestroyObject(gameObject);
         }
     }
 
@@ -51,6 +58,9 @@ public class Projectile : MonoBehaviour
             }
 
             collision.gameObject.GetComponentInParent<MovingTarget>().gameObject.SetActive(false);
+
+            safeguard = false; 
+
             Destroy(gameObject);       
            
         }

@@ -9,7 +9,8 @@ public class ScoreKeeper : MonoBehaviour
     private int playerScore = 0;
     private int aiScore = 0;
 
-    public TextMeshPro textMeshPro; 
+    public TextMeshPro playerMesh;
+    public TextMeshPro agentMesh; 
 
 
     // Start is called before the first frame update
@@ -19,12 +20,14 @@ public class ScoreKeeper : MonoBehaviour
         {
             instance = this; 
         }
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        playerMesh.text = playerScore.ToString();
+        agentMesh.text = aiScore.ToString();
     }
 
 

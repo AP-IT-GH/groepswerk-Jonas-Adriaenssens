@@ -10,6 +10,8 @@ TagManager:
   - Target
   - Grabbable
   - AI
+  - AgentScore
+  - PlayerScore
   layers:
   - Default
   - TransparentFX
