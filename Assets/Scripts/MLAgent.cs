@@ -19,7 +19,11 @@ public class MLAgent : Agent
 
     private ScoreKeeper scoreKeeper;
 
-    public LayerMask aidLayer; 
+    public LayerMask aidLayer;
+
+    private float timer;
+    private GameObject look; 
+
 
     // Start is called before the first frame update
     void Start()
@@ -43,14 +47,32 @@ public class MLAgent : Agent
 
         //helping with training throug raycast
         RaycastHit hit; 
-
         if(Physics.Raycast(transform.position, transform.right, out hit, 30, aidLayer))
         {
             AddReward(0.5f);
             Debug.Log("Raycast aider did hit"); 
             Debug.DrawLine(transform.position, hit.point); 
+
+            if(hit.transform.gameObject == look)
+            {
+                if(Time.time - timer > 1)
+                {
+                    AddReward(-1f); 
+                }
+
+            } else
+            {
+                look = hit.transform.gameObject;
+                timer = Time.time; 
+            }
+
         }
 
+        //negative reward if no targets hit
+        if(scoreKeeper.getAiScore() == 0)
+        {
+            AddReward(-0.001f); 
+        }
 
     }
 
@@ -65,7 +87,7 @@ public class MLAgent : Agent
 
     internal void hit()
     {
-        AddReward(3f); 
+        AddReward(5f); 
 
     }
 
@@ -83,7 +105,7 @@ public class MLAgent : Agent
             rotation.y = ArmRotationSpeed * (vectorAction[0] * 2 - 3) * Time.deltaTime;
             Debug.Log("Rotate Arm Horizontal - " + vectorAction[0] + " | " + rotation.y);
 
-            AddReward(0.001f);
+           // AddReward(0.001f);
 
         }
 
@@ -94,7 +116,7 @@ public class MLAgent : Agent
             Debug.Log("Rotate Arm Vertical - " + vectorAction[1] + " | " + rotation.z);
 
 
-            AddReward(0.001f);
+          //  AddReward(0.001f);
 
         }
 
@@ -103,7 +125,9 @@ public class MLAgent : Agent
         {
             shoot.Fire();
             Debug.Log("Shoot - " + vectorAction[2]);
-      
+
+          //  AddReward(0.0001f);
+
         }
 
         transform.parent.Rotate(0, rotation.y, 0);

@@ -45,5 +45,35 @@ TEST2:
 	
 	attempt 3: TODO: remove reward for moving and shooting
 				increase hit reward? 
-				
+
+TEST3: 
+
+	attempt 1: 64 env; added 1 raycast with a reward of .5f to get it to aim
+			(no fails => memmory leak seems solved; ram stable) 
+
+	attempt 2: stimulate shooting & increase hit reward 
 		
+	attempt 3: remove reward foor moving and shooting; add punishment for score = 0 
+			increase reward for hit
+	
+	attempt 4: add negative reward for only looking 
+			=> stimulate shooting at a target. 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
