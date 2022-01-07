@@ -1,0 +1,56 @@
+{
+    "Skeet": {
+        "checkpoints": [
+            {
+                "steps": 499998,
+                "file_path": "results\\test6\\Skeet\\Skeet-499998.onnx",
+                "reward": null,
+                "creation_time": 1641554259.586892,
+                "auxillary_file_paths": [
+                    "results\\test6\\Skeet\\Skeet-499998.pt"
+                ]
+            },
+            {
+                "steps": 999997,
+                "file_path": "results\\test6\\Skeet\\Skeet-999997.onnx",
+                "reward": null,
+                "creation_time": 1641555873.6242726,
+                "auxillary_file_paths": [
+                    "results\\test6\\Skeet\\Skeet-999997.pt"
+                ]
+            },
+            {
+                "steps": 1499998,
+                "file_path": "results\\test6\\Skeet\\Skeet-1499998.onnx",
+                "reward": null,
+                "creation_time": 1641557457.6378875,
+                "auxillary_file_paths": [
+                    "results\\test6\\Skeet\\Skeet-1499998.pt"
+                ]
+            },
+            {
+                "steps": 1891377,
+                "file_path": "results\\test6\\Skeet\\Skeet-1891377.onnx",
+                "reward": null,
+                "creation_time": 1641558696.8861783,
+                "auxillary_file_paths": [
+                    "results\\test6\\Skeet\\Skeet-1891377.pt"
+                ]
+            }
+        ],
+        "final_checkpoint": {
+            "steps": 1891377,
+            "file_path": "results\\test6\\Skeet.onnx",
+            "reward": null,
+            "creation_time": 1641558696.8861783,
+            "auxillary_file_paths": [
+                "results\\test6\\Skeet\\Skeet-1891377.pt"
+            ]
+        }
+    },
+    "metadata": {
+        "stats_format_version": "0.3.0",
+        "mlagents_version": "0.27.0",
+        "torch_version": "1.10.0"
+    }
+}
