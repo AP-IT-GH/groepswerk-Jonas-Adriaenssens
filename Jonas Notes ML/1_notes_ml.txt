@@ -94,13 +94,21 @@ different approach => stepwise
 
 
 TEST7:	
-
->step 1: 
-
-	attempt 1
+step grootte = 10000 en 2000 geweest
 
 
+>step 1: no movement & only reappearing/dissapearing target in front of loop
 
+	attempt 1: env 64 
+		till 300 000 (not perfect as he keeps shooting mostly)
+		"note: maybe i should've added random times to spawn n despawn target"
+
+>step 2: only horizontal movement and multiple targets around appearing and dissapearing
+
+	attempt 1: env 64		
+		remove reward for shooting
+		add reward moving
+		miss reward to -1.5 (absolute value increase by .5) 
 
 
 

@@ -114,10 +114,10 @@ public class MLAgent : Agent
         // horizontal rotation arm - Y
         if (vectorAction[0] != 0)
         {
-          //  rotation.y = ArmRotationSpeed * (vectorAction[0] * 2 - 3) * Time.deltaTime;
+            rotation.y = ArmRotationSpeed * (vectorAction[0] * 2 - 3) * Time.deltaTime;
             Debug.Log("Rotate Arm Horizontal - " + vectorAction[0] + " | " + rotation.y);
 
-          //  AddReward(0.0001f);
+            AddReward(0.0001f);
 
         }
 
@@ -138,7 +138,7 @@ public class MLAgent : Agent
             shoot.Fire();
             Debug.Log("Shoot - " + vectorAction[2]);
 
-          //  AddReward(0.0001f);
+            // AddReward(0.0001f);
 
         }
 
