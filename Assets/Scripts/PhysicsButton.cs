@@ -28,6 +28,12 @@ public class PhysicsButton : MonoBehaviour
             Pressed();
         if (_isPressed && GetValue() - threshold <= 0)
             Released();
+
+        // limit button movement. Not beautiful, but functional.
+        if (transform.localPosition.y > _startPos.y)
+            transform.localPosition = _startPos;
+        if (Vector3.Distance(_startPos, transform.localPosition) > 0.088f)
+            transform.localPosition = _startPos - new Vector3(0, 0.088f, 0);
     }
 
     private float GetValue()
