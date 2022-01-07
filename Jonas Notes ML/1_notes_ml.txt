@@ -109,6 +109,9 @@ step grootte = 10000 en 2000 geweest
 		remove reward for shooting
 		add reward moving
 		miss reward to -1.5 (absolute value increase by .5) 
+		
+	  	__
+		add reward for looking at target (increase interest in target)
 
 
 

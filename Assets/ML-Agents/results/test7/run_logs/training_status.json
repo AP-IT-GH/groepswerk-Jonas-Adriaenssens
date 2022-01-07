@@ -2,33 +2,6 @@
     "Skeet": {
         "checkpoints": [
             {
-                "steps": 100800,
-                "file_path": "results\\test7\\Skeet\\Skeet-100800.onnx",
-                "reward": null,
-                "creation_time": 1641564940.1046581,
-                "auxillary_file_paths": [
-                    "results\\test7\\Skeet\\Skeet-100800.pt"
-                ]
-            },
-            {
-                "steps": 129216,
-                "file_path": "results\\test7\\Skeet\\Skeet-129216.onnx",
-                "reward": null,
-                "creation_time": 1641565191.9925904,
-                "auxillary_file_paths": [
-                    "results\\test7\\Skeet\\Skeet-129216.pt"
-                ]
-            },
-            {
-                "steps": 303168,
-                "file_path": "results\\test7\\Skeet\\Skeet-303168.onnx",
-                "reward": null,
-                "creation_time": 1641566427.9558184,
-                "auxillary_file_paths": [
-                    "results\\test7\\Skeet\\Skeet-303168.pt"
-                ]
-            },
-            {
                 "steps": 307968,
                 "file_path": "results\\test7\\Skeet\\Skeet-307968.onnx",
                 "reward": null,
@@ -45,15 +18,42 @@
                 "auxillary_file_paths": [
                     "results\\test7\\Skeet\\Skeet-322368.pt"
                 ]
+            },
+            {
+                "steps": 464000,
+                "file_path": "results\\test7\\Skeet\\Skeet-464000.onnx",
+                "reward": null,
+                "creation_time": 1641568147.459965,
+                "auxillary_file_paths": [
+                    "results\\test7\\Skeet\\Skeet-464000.pt"
+                ]
+            },
+            {
+                "steps": 499998,
+                "file_path": "results\\test7\\Skeet\\Skeet-499998.onnx",
+                "reward": null,
+                "creation_time": 1641568570.5853145,
+                "auxillary_file_paths": [
+                    "results\\test7\\Skeet\\Skeet-499998.pt"
+                ]
+            },
+            {
+                "steps": 588096,
+                "file_path": "results\\test7\\Skeet\\Skeet-588096.onnx",
+                "reward": null,
+                "creation_time": 1641569130.0942502,
+                "auxillary_file_paths": [
+                    "results\\test7\\Skeet\\Skeet-588096.pt"
+                ]
             }
         ],
         "final_checkpoint": {
-            "steps": 322368,
+            "steps": 588096,
             "file_path": "results\\test7\\Skeet.onnx",
             "reward": null,
-            "creation_time": 1641567195.5177362,
+            "creation_time": 1641569130.0942502,
             "auxillary_file_paths": [
-                "results\\test7\\Skeet\\Skeet-322368.pt"
+                "results\\test7\\Skeet\\Skeet-588096.pt"
             ]
         }
     },

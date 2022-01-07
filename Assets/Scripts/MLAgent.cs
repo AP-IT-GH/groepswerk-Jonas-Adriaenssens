@@ -56,6 +56,10 @@ public class MLAgent : Agent
 
             if(hit.transform.gameObject == look)
             {
+                
+                //reward for looking at target
+                AddReward(0.001f); 
+
                 if(Time.time - timer > 2)
                 {
                   
@@ -70,7 +74,7 @@ public class MLAgent : Agent
 
                 //TODO : UNCOMMENT
 
-                // AddReward(0.01f); 
+                //AddReward(0.01f); 
 
                 timer = Time.time; 
             }
@@ -138,7 +142,7 @@ public class MLAgent : Agent
             shoot.Fire();
             Debug.Log("Shoot - " + vectorAction[2]);
 
-            // AddReward(0.0001f);
+             AddReward(0.0001f);
 
         }
 
