@@ -58,13 +58,20 @@ public class MLAgent : Agent
             {
                 if(Time.time - timer > 2)
                 {
-                    AddReward(-1f); 
+                  
+                    // TODO : UNCOMMENT
+                    
+                    // AddReward(-1f); 
                 }
 
             } else
             {
                 look = hit.transform.gameObject;
-                AddReward(0.01f); 
+
+                //TODO : UNCOMMENT
+
+                // AddReward(0.01f); 
+
                 timer = Time.time; 
             }
 
@@ -101,20 +108,24 @@ public class MLAgent : Agent
 
         Vector3 rotation = Vector3.zero;
 
+
+        //TODO: UNCOMMENT ACTIONS
+
+
         // horizontal rotation arm - Y
         if (vectorAction[0] != 0)
         {
-            rotation.y = ArmRotationSpeed * (vectorAction[0] * 2 - 3) * Time.deltaTime;
+          //  rotation.y = ArmRotationSpeed * (vectorAction[0] * 2 - 3) * Time.deltaTime;
             Debug.Log("Rotate Arm Horizontal - " + vectorAction[0] + " | " + rotation.y);
 
-            AddReward(0.0001f);
+          //  AddReward(0.0001f);
 
         }
 
         // vertical rotation arm    - X
         if(vectorAction[1] != 0)
         {
-            rotation.z = ArmRotationSpeed * (vectorAction[1] * 2 - 3) * Time.deltaTime;
+          //  rotation.z = ArmRotationSpeed * (vectorAction[1] * 2 - 3) * Time.deltaTime;
             Debug.Log("Rotate Arm Vertical - " + vectorAction[1] + " | " + rotation.z);
 
 
@@ -128,7 +139,7 @@ public class MLAgent : Agent
             shoot.Fire();
             Debug.Log("Shoot - " + vectorAction[2]);
 
-            AddReward(0.0001f);
+          //  AddReward(0.0001f);
 
         }
 

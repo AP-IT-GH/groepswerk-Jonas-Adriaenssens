@@ -78,9 +78,26 @@ TEST5: accidently started on oculus -> to delete
 
 TEST6: 
 	attempt 1: env 64; added still targets; improved rewards; 
+		=> did not learn what expected
+
+---------------------
 
 
+different approach => stepwise 
 
+1 restricts movements appear and dissapear target in front
+ => leer schieten op een doel
+
+2 add movement & still targets at random locations 
+
+3 throw everything in 
+
+
+TEST7:	
+
+>step 1: 
+
+	attempt 1
 
 
 
