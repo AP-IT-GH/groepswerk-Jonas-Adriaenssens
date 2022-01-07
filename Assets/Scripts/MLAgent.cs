@@ -37,7 +37,7 @@ public class MLAgent : Agent
 
     internal void Miss()
     {
-        AddReward(-1f); 
+        AddReward(-2f); 
     }
 
     // Update is called once per frame
@@ -60,21 +60,16 @@ public class MLAgent : Agent
                 //reward for looking at target
                 AddReward(0.001f); 
 
-                if(Time.time - timer > 2)
-                {
-                  
-                    // TODO : UNCOMMENT
-                    
-                    // AddReward(-1f); 
+                if(Time.time - timer > 1.5f)
+                {  
+                    AddReward(-0.5f); 
                 }
 
             } else
             {
                 look = hit.transform.gameObject;
 
-                //TODO : UNCOMMENT
-
-                //AddReward(0.01f); 
+                AddReward(0.01f); 
 
                 timer = Time.time; 
             }
@@ -128,7 +123,7 @@ public class MLAgent : Agent
         // vertical rotation arm    - X
         if(vectorAction[1] != 0)
         {
-          //  rotation.z = ArmRotationSpeed * (vectorAction[1] * 2 - 3) * Time.deltaTime;
+            rotation.z = ArmRotationSpeed * (vectorAction[1] * 2 - 3) * Time.deltaTime;
             Debug.Log("Rotate Arm Vertical - " + vectorAction[1] + " | " + rotation.z);
 
 
@@ -142,7 +137,7 @@ public class MLAgent : Agent
             shoot.Fire();
             Debug.Log("Shoot - " + vectorAction[2]);
 
-             AddReward(0.0001f);
+            // AddReward(0.0001f);
 
         }
 

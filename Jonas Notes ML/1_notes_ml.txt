@@ -113,6 +113,27 @@ step grootte = 10000 en 2000 geweest
 	  	__
 		add reward for looking at target (increase interest in target)
 
+	continue 2: 
+		increase reward to -2f for a missed shot
+		decrease reward for hit to 4f from 5f 
+		disable reward for shooting
+		
+		
+		=> hij blijft voornamelijk op dezelfde positie
+
+
+>step 3: static targets all over the place different heights 
+		
+		env 128; 
+	
+		add rewards for moving
+		punishment for staying 
+		edit values a bit
+		
+		"targetspawner.cs" => disable moving targets
+
+		set to 5000 steps
+
 
 
 
