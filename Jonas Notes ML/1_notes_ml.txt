@@ -55,9 +55,21 @@ TEST3:
 		
 	attempt 3: remove reward foor moving and shooting; add punishment for score = 0 
 			increase reward for hit
-	
-	attempt 4: add negative reward for only looking 
+
+
+
+TEST4: 	
+	attempt 1: add negative reward for only looking 
 			=> stimulate shooting at a target. 
+		improve rays => NEW TEST ML RUN NEEDED
+		
+		64 env; 
+
+		ran until 2.5 mil steps
+
+	attempt 2: edit scores; add more insentive to fire; change to 2 seconds 
+
+
 
 
 
