@@ -73,7 +73,7 @@ public class MLAgent : Agent
         //negative reward if no targets hit
         if(scoreKeeper.getAiScore() == 0)
         {
-            AddReward(-0.001f); 
+            AddReward(-0.0001f); 
         }
 
     }
