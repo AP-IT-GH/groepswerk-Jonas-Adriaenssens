@@ -68,10 +68,16 @@ TEST4:
 		ran until 2.5 mil steps
 
 	attempt 2: edit scores; add more insentive to fire; change to 2 seconds 
+		
+		ended when c drive was completely full
+
+
+TEST5: accidently started on oculus -> to delete
 
 
 
-
+TEST6: 
+	attempt 1: env 64; added still targets; improved rewards; 
 
 
 
