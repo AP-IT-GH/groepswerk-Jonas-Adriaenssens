@@ -97,7 +97,6 @@ public class MLAgent : Agent
     internal void hit()
     {
         AddReward(5f); 
-
     }
 
     public override void OnActionReceived(ActionBuffers actions)
