@@ -9,6 +9,9 @@ TagManager:
   - TurretGimbal
   - Target
   - Grabbable
+  - AI
+  - AgentScore
+  - PlayerScore
   layers:
   - Default
   - TransparentFX
@@ -19,7 +22,7 @@ TagManager:
   - Player
   - Turret
   - 
-  - 
+  - TrainingAid
   - 
   - 
   - 

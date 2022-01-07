@@ -1,0 +1,65 @@
+{
+    "Skeet": {
+        "checkpoints": [
+            {
+                "steps": 1999998,
+                "file_path": "results\\test1\\Skeet\\Skeet-1999998.onnx",
+                "reward": null,
+                "creation_time": 1641379339.60384,
+                "auxillary_file_paths": [
+                    "results\\test1\\Skeet\\Skeet-1999998.pt"
+                ]
+            },
+            {
+                "steps": 2195460,
+                "file_path": "results\\test1\\Skeet\\Skeet-2195460.onnx",
+                "reward": null,
+                "creation_time": 1641380752.1928594,
+                "auxillary_file_paths": [
+                    "results\\test1\\Skeet\\Skeet-2195460.pt"
+                ]
+            },
+            {
+                "steps": 2499997,
+                "file_path": "results\\test1\\Skeet\\Skeet-2499997.onnx",
+                "reward": null,
+                "creation_time": 1641384097.3253765,
+                "auxillary_file_paths": [
+                    "results\\test1\\Skeet\\Skeet-2499997.pt"
+                ]
+            },
+            {
+                "steps": 2573420,
+                "file_path": "results\\test1\\Skeet\\Skeet-2573420.onnx",
+                "reward": null,
+                "creation_time": 1641384583.7256315,
+                "auxillary_file_paths": [
+                    "results\\test1\\Skeet\\Skeet-2573420.pt"
+                ]
+            },
+            {
+                "steps": 2587484,
+                "file_path": "results\\test1\\Skeet\\Skeet-2587484.onnx",
+                "reward": null,
+                "creation_time": 1641391015.166937,
+                "auxillary_file_paths": [
+                    "results\\test1\\Skeet\\Skeet-2587484.pt"
+                ]
+            }
+        ],
+        "final_checkpoint": {
+            "steps": 2587484,
+            "file_path": "results\\test1\\Skeet.onnx",
+            "reward": null,
+            "creation_time": 1641391015.166937,
+            "auxillary_file_paths": [
+                "results\\test1\\Skeet\\Skeet-2587484.pt"
+            ]
+        }
+    },
+    "metadata": {
+        "stats_format_version": "0.3.0",
+        "mlagents_version": "0.27.0",
+        "torch_version": "1.10.0"
+    }
+}

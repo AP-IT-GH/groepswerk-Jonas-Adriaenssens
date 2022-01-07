@@ -17,15 +17,20 @@ public class MLAgent : Agent
     public float RotationSpeed;
     public float ArmRotationSpeed;
 
-    private ScoreHelper scoreHelper;
-    private int oldScore = 0;
-    private int oldPunishment = 0;
+    private ScoreKeeper scoreKeeper;
+
+    public LayerMask aidLayer;
+
+    private float timer;
+    private GameObject look; 
+
 
     // Start is called before the first frame update
     void Start()
     {
-        if (!scoreHelper)
-            scoreHelper = gameObject.GetComponentInParent<ScoreHelper>();
+
+        if (!scoreKeeper)
+            scoreKeeper = gameObject.GetComponentInParent<ScoreKeeper>();
 
         shoot = gameObject.GetComponent<Shoot>();
     }
@@ -40,23 +45,51 @@ public class MLAgent : Agent
     {
         if (ScoreBoard != null)
             ScoreBoard.text = GetCumulativeReward().ToString("f4");
+
+        //helping with training throug raycast
+        RaycastHit hit; 
+        if(Physics.Raycast(transform.position, transform.right, out hit, 30, aidLayer))
+        {
+            AddReward(0.5f);
+            Debug.Log("Raycast aider did hit"); 
+            Debug.DrawLine(transform.position, hit.point); 
+
+            if(hit.transform.gameObject == look)
+            {
+                if(Time.time - timer > 2)
+                {
+                    AddReward(-1f); 
+                }
+
+            } else
+            {
+                look = hit.transform.gameObject;
+                AddReward(0.01f); 
+                timer = Time.time; 
+            }
+
+        }
+
+        //negative reward if no targets hit
+        if(scoreKeeper.getAiScore() == 0)
+        {
+            AddReward(-0.0001f); 
+        }
+
     }
 
     public override void OnEpisodeBegin()
     {
-        if(scoreHelper != null)
+        if(scoreKeeper != null)
         {
-            scoreHelper.resetScore();
-            scoreHelper.resetPunishment();
+            scoreKeeper.clearScores();
         }    
 
-        oldScore = 0;
-        oldPunishment = 0;
     }
 
     internal void hit()
     {
-        AddReward(1f); 
+        AddReward(5f); 
 
     }
 
@@ -74,7 +107,7 @@ public class MLAgent : Agent
             rotation.y = ArmRotationSpeed * (vectorAction[0] * 2 - 3) * Time.deltaTime;
             Debug.Log("Rotate Arm Horizontal - " + vectorAction[0] + " | " + rotation.y);
 
-            AddReward(0.001f);
+            AddReward(0.0001f);
 
         }
 
@@ -85,7 +118,7 @@ public class MLAgent : Agent
             Debug.Log("Rotate Arm Vertical - " + vectorAction[1] + " | " + rotation.z);
 
 
-            AddReward(0.001f);
+            AddReward(0.0001f);
 
         }
 
@@ -94,6 +127,9 @@ public class MLAgent : Agent
         {
             shoot.Fire();
             Debug.Log("Shoot - " + vectorAction[2]);
+
+            AddReward(0.0001f);
+
         }
 
         transform.parent.Rotate(0, rotation.y, 0);

@@ -1,0 +1,91 @@
+NOTES ivm ML
+__________________
+
+
+
+TEST1
+	attempt 1: stopped at 700 000 steps after 1h7 
+		out of memory or crash / standby ? (used 8 environments)
+
+	attempt 2: reduced to 6 environments & resume 
+		after some time same problem => see foto's
+		700 000 steps as well 
+	
+	attempt 3: reduced to 4 environments & 
+		set ML script to 100 000 steps 
+		(yaml still higher)
+		& resume
+		new crash v2 after 700 000 steps
+
+	
+	attempt 4: edit reward system (remove for moving & add for shooting + increase reward for hit)
+		change ml script to 10 000 steps
+		increase to 8 environments 
+		
+		manually stopped => targets are in wrong layer; there would've been no improvement
+
+	attempt 5: change target layer to correct layer so the machine will see them
+			continued training
+
+		stopped manualy (need to continue but first i'll restart)
+
+
+TEST2: 
+	attempt 1: steps 10 000; 8 environments; reward for hit 3f; reward for movement or shoot .001f; punishment -1f; 
+			miss is -1f; 
+		unity is verdwenen ? (crashed) 
+		stopped at step 702 000
+		
+	BIJ HET TESTEN : het model denkt meer na over de movement en schiet al enkele targets maar nog niet te significant 
+			dit ziet er veelbelovend uit na meer training
+
+	attempt 2: 16 environments & resume
+			stopped at 702 000 (prob crash cuz ran out of ram) 
+			
+	
+	attempt 3: TODO: remove reward for moving and shooting
+				increase hit reward? 
+
+TEST3: 
+
+	attempt 1: 64 env; added 1 raycast with a reward of .5f to get it to aim
+			(no fails => memmory leak seems solved; ram stable) 
+
+	attempt 2: stimulate shooting & increase hit reward 
+		
+	attempt 3: remove reward foor moving and shooting; add punishment for score = 0 
+			increase reward for hit
+
+
+
+TEST4: 	
+	attempt 1: add negative reward for only looking 
+			=> stimulate shooting at a target. 
+		improve rays => NEW TEST ML RUN NEEDED
+		
+		64 env; 
+
+		ran until 2.5 mil steps
+
+	attempt 2: edit scores; add more insentive to fire; change to 2 seconds 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

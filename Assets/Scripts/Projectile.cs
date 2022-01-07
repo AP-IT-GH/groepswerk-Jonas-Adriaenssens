@@ -8,6 +8,7 @@ public class Projectile : MonoBehaviour
     [SerializeField] private float TTL = 3;
     private float Spawned;
 
+
     public virtual void Init(Weapon weapon)
     {
         this.weapon = weapon;
@@ -23,13 +24,18 @@ public class Projectile : MonoBehaviour
     {
         if(Time.time - Spawned > TTL)
         {
+            if(weapon != null)
+            {
 
             if (weapon.gameObject.tag == "AI")
             {
                 weapon.gameObject.GetComponent<MLAgent>().Miss();
             }
 
-            DestroyObject(gameObject);
+            }
+
+                Object.Destroy(gameObject);
+            
         }
     }
 
@@ -50,7 +56,16 @@ public class Projectile : MonoBehaviour
                 ScoreKeeper.instance.playerHit(); 
             }
 
-            collision.gameObject.GetComponentInParent<MovingTarget>().gameObject.SetActive(false);
+            
+            if(collision.gameObject.GetComponentInParent<MovingTarget>() != null)
+            {
+                collision.gameObject.GetComponentInParent<MovingTarget>().gameObject.SetActive(false);
+            } else
+            {
+                collision.gameObject.GetComponentInParent<StillTargetSpawner>().gameObject.SetActive(false);
+            }
+
+
             Destroy(gameObject);       
            
         }

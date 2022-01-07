@@ -1,12 +1,16 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro; 
 
 public class ScoreKeeper : MonoBehaviour
 {
     public static ScoreKeeper instance; 
     private int playerScore = 0;
     private int aiScore = 0;
+
+    public TextMeshPro playerMesh;
+    public TextMeshPro agentMesh; 
 
 
     // Start is called before the first frame update
@@ -16,21 +20,27 @@ public class ScoreKeeper : MonoBehaviour
         {
             instance = this; 
         }
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        playerMesh.text = playerScore.ToString();
+        agentMesh.text = aiScore.ToString();
     }
-
-
 
 
     public void playerHit()
     {
         playerScore++;
     }
+
+    public void aiHit()
+    {
+        aiScore++;
+    }
+
 
 
     public void clearScores()

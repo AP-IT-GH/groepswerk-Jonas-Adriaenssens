@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class TargetSpawner : MonoBehaviour
 {
-    public Pooling pool;
+    public Pooling poolMoving;
+    public Pooling poolStill;
     public float MinTimeWait = 2;
     public float MaxTimeWait = 5;
 
@@ -23,7 +24,15 @@ public class TargetSpawner : MonoBehaviour
     {
         if(Time.time > nextSpawn)
         {
-            var v = pool.GetObject();
+            GameObject v;  //=  poolMoving.GetObject();
+            if (Random.Range(0,100) > 50)
+            {
+                v = poolMoving.GetObject();
+            } else
+            {
+                v = poolStill.GetObject(); 
+            }
+
             v.transform.position = transform.position;
             v.transform.GetChild(0).gameObject.SetActive(true);
             d();
