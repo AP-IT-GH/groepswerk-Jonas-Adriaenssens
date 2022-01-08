@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class StillTargetSpawner : MonoBehaviour
 {
-    [SerializeField] private float TTL = 5;
+    public float TTL = 5;
     private float Spawned = 0;
 
 

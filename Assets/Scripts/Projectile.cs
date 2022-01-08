@@ -45,6 +45,7 @@ public class Projectile : MonoBehaviour
     {
         if(collision.gameObject.tag == "Target")
         {
+            Debug.Log("Hit");
             if(weapon.gameObject.tag == "AI")
             {
                 weapon.gameObject.GetComponent<MLAgent>().hit();

@@ -13,11 +13,11 @@ public class Shoot : Weapon
 
     public void Fire()
     {
-        Debug.Log("Shoot.Fire() called");
+        // Debug.Log("Shoot.Fire() called");
 
         if (Time.time - lastShot <= 1f)
         {
-            Debug.Log("No shoot");
+            // Debug.Log("No shoot");
             return;
         }
 

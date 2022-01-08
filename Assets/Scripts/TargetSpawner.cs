@@ -9,6 +9,10 @@ public class TargetSpawner : MonoBehaviour
     public float MinTimeWait = 2;
     public float MaxTimeWait = 5;
 
+    [SerializeField]
+    private bool TrainingStand = false;
+    private GameObject LastShot;
+
     float nextSpawn;
 
     private void Start()
@@ -20,28 +24,40 @@ public class TargetSpawner : MonoBehaviour
         nextSpawn = Time.time + Random.Range(MinTimeWait, MaxTimeWait);
     }
 
+    private void Spawn()
+    {
+        GameObject v;  //=  poolMoving.GetObject();
+
+        //TODO: UNCOMMENT
+
+        /* 
+        if (Random.Range(0,100) > 50)
+        {
+            v = poolMoving.GetObject();
+        } else
+        {
+
+        */
+        v = poolStill.GetObject();
+        // }
+
+        v.transform.position = transform.position;
+        v.transform.GetChild(0).gameObject.SetActive(true);
+        v.GetComponentInChildren<StillTargetSpawner>().TTL = 50000;
+        LastShot = v.GetComponentInChildren<StillTargetSpawner>().gameObject;
+        d();
+    }
+
+    public void Restart()
+    {
+        LastShot.SetActive(false);
+    }
     private void Update()
     {
-        if(Time.time > nextSpawn)
+        // if(Time.time > nextSpawn)
+        if(LastShot == null || LastShot.active == false)
         {
-            GameObject v;  //=  poolMoving.GetObject();
-            
-            //TODO: UNCOMMENT
-            
-            /* 
-            if (Random.Range(0,100) > 50)
-            {
-                v = poolMoving.GetObject();
-            } else
-            {
-
-            */
-                v = poolStill.GetObject(); 
-           // }
-
-            v.transform.position = transform.position;
-            v.transform.GetChild(0).gameObject.SetActive(true);
-            d();
+            Spawn();
         }
     }
 }
