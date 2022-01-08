@@ -25,11 +25,14 @@ public class TargetSpawner : MonoBehaviour
         if(Time.time > nextSpawn)
         {
             GameObject v;  //=  poolMoving.GetObject();
+
             if (Random.Range(0,100) > 50)
             {
                 v = poolMoving.GetObject();
             } else
             {
+
+            
                 v = poolStill.GetObject(); 
             }
 

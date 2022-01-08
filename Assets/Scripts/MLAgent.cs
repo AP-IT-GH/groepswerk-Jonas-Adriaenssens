@@ -22,8 +22,13 @@ public class MLAgent : Agent
     public LayerMask aidLayer;
 
     private float timer;
-    private GameObject look; 
+    private GameObject look;
+    private float StartTimeEpisode; 
 
+    public float EpisodeTimer = 60f; 
+
+
+    private int HitCounter = 0;
 
     // Start is called before the first frame update
     void Start()
@@ -33,11 +38,14 @@ public class MLAgent : Agent
             scoreKeeper = gameObject.GetComponentInParent<ScoreKeeper>();
 
         shoot = gameObject.GetComponent<Shoot>();
+
+        StartTimeEpisode = Time.time; 
+
     }
 
     internal void Miss()
     {
-        AddReward(-1f); 
+        AddReward(-2f); 
     }
 
     // Update is called once per frame
@@ -56,21 +64,20 @@ public class MLAgent : Agent
 
             if(hit.transform.gameObject == look)
             {
-                if(Time.time - timer > 2)
-                {
-                  
-                    // TODO : UNCOMMENT
-                    
-                    // AddReward(-1f); 
+                
+                //reward for looking at target
+                AddReward(0.001f); 
+
+                if(Time.time - timer > 1.5f)
+                {  
+                    AddReward(-0.5f); 
                 }
 
             } else
             {
                 look = hit.transform.gameObject;
 
-                //TODO : UNCOMMENT
-
-                // AddReward(0.01f); 
+                AddReward(0.01f); 
 
                 timer = Time.time; 
             }
@@ -78,10 +85,16 @@ public class MLAgent : Agent
         }
 
         //negative reward if no targets hit
-        if(scoreKeeper.getAiScore() == 0)
+        if(HitCounter == 0)
         {
-            AddReward(-0.0001f); 
+            AddReward(-0.001f); 
         }
+
+        if (Time.time - StartTimeEpisode > EpisodeTimer)
+        {
+            EndEpisode(); 
+        }
+
 
     }
 
@@ -90,13 +103,17 @@ public class MLAgent : Agent
         if(scoreKeeper != null)
         {
             scoreKeeper.clearScores();
-        }    
+            HitCounter = 0; 
+        }
+
+        StartTimeEpisode = Time.time; 
 
     }
 
     internal void hit()
     {
-        AddReward(5f); 
+        AddReward(5f);
+        HitCounter++; 
     }
 
     public override void OnActionReceived(ActionBuffers actions)
@@ -114,17 +131,17 @@ public class MLAgent : Agent
         // horizontal rotation arm - Y
         if (vectorAction[0] != 0)
         {
-          //  rotation.y = ArmRotationSpeed * (vectorAction[0] * 2 - 3) * Time.deltaTime;
+            rotation.y = ArmRotationSpeed * (vectorAction[0] * 2 - 3) * Time.deltaTime;
             Debug.Log("Rotate Arm Horizontal - " + vectorAction[0] + " | " + rotation.y);
 
-          //  AddReward(0.0001f);
+            AddReward(0.0001f);
 
         }
 
         // vertical rotation arm    - X
         if(vectorAction[1] != 0)
         {
-          //  rotation.z = ArmRotationSpeed * (vectorAction[1] * 2 - 3) * Time.deltaTime;
+            rotation.z = ArmRotationSpeed * (vectorAction[1] * 2 - 3) * Time.deltaTime;
             Debug.Log("Rotate Arm Vertical - " + vectorAction[1] + " | " + rotation.z);
 
 
@@ -138,7 +155,7 @@ public class MLAgent : Agent
             shoot.Fire();
             Debug.Log("Shoot - " + vectorAction[2]);
 
-          //  AddReward(0.0001f);
+            AddReward(0.00001f);
 
         }
 

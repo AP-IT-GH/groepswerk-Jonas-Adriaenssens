@@ -94,21 +94,69 @@ different approach => stepwise
 
 
 TEST7:	
-
->step 1: 
-
-	attempt 1
+step grootte = 10000 en 2000 geweest
 
 
+>step 1: no movement & only reappearing/dissapearing target in front of loop
+
+	attempt 1: env 64 
+		till 300 000 (not perfect as he keeps shooting mostly)
+		"note: maybe i should've added random times to spawn n despawn target"
+
+>step 2: only horizontal movement and multiple targets around appearing and dissapearing
+
+	attempt 1: env 64		
+		remove reward for shooting
+		add reward moving
+		miss reward to -1.5 (absolute value increase by .5) 
+		
+	  	__
+		add reward for looking at target (increase interest in target)
+
+	continue 2: 
+		increase reward to -2f for a missed shot
+		decrease reward for hit to 4f from 5f 
+		disable reward for shooting
+		
+		
+		=> hij blijft voornamelijk op dezelfde positie
 
 
+>step 3: static targets all over the place different heights 
+		
+		env 128; 
+	
+		add rewards for moving
+		punishment for staying 
+		edit values a bit
+		
+		"targetspawner.cs" => disable moving targets
+
+		set to 5000 steps
+
+		no significant improvement
 
 
+Deleted 50gb of log files from unity
 
 
+>step 4: everything is as it should be now (all like normal gameplay)
+
+	env 256 ; edit rewards a bit
+		(pray it works)
 
 
+	env 512; edit rewards a bit
+		hope this will improve => crash 512 is too much
+
+	env 256; 
 
 
-
+TEST 8: not split but implement "endepisode" (forgot this part apperently)
+		
+	256 env; 
+	5000 steps; 
+	
+	endepisode 1 minuut (60sec)
+	
 
