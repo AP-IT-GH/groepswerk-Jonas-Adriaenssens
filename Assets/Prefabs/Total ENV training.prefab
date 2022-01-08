@@ -6853,6 +6853,22 @@ PrefabInstance:
       propertyPath: m_BehaviorType
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5126647086237737486, guid: dd826943619b1ea42a6308c51f452034, type: 3}
+      propertyPath: m_BrainParameters.VectorActionSize.Array.data[0]
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5126647086237737486, guid: dd826943619b1ea42a6308c51f452034, type: 3}
+      propertyPath: m_BrainParameters.VectorActionSize.Array.data[1]
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5126647086237737486, guid: dd826943619b1ea42a6308c51f452034, type: 3}
+      propertyPath: m_BrainParameters.m_ActionSpec.BranchSizes.Array.data[0]
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5126647086237737486, guid: dd826943619b1ea42a6308c51f452034, type: 3}
+      propertyPath: m_BrainParameters.m_ActionSpec.BranchSizes.Array.data[1]
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 6294942065870387184, guid: dd826943619b1ea42a6308c51f452034, type: 3}
       propertyPath: m_LocalRotation.w
       value: 0.92387956

@@ -153,8 +153,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Env: {fileID: 69464609209997266, guid: fc37d4449fe349f41b70ba04c4999cb1, type: 3}
-  X: 2
-  Y: 2
+  X: 3
+  Y: 3
   Offset: 600
 --- !u!4 &86946166
 Transform:

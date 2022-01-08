@@ -48,7 +48,7 @@ public class MLAgent : Agent
     void Update()
     {
 
-        if (Time.time - RestartTimer > 300)
+        if (Time.time - RestartTimer > 60)
         {
             EndEpisode();
         }
@@ -135,8 +135,15 @@ public class MLAgent : Agent
         // vertical rotation arm    - X
         if(vectorAction[1] != 0)
         {
-            rotation.z = ArmRotationSpeed * (vectorAction[1] * 2 - 3) * Time.deltaTime;
-            // Debug.Log("Rotate Arm Vertical - " + vectorAction[1] + " | " + rotation.z);
+            if(vectorAction[1] == 1)
+            {
+                rotation.z = ArmRotationSpeed * Time.deltaTime;
+            }
+            else if (vectorAction[1] == 2){
+                rotation.z = ArmRotationSpeed * -Time.deltaTime;
+
+            }
+            Debug.Log("Rotate Arm Vertical - " + vectorAction[1] + " | " + rotation.z);
         }
 
         // shoot
