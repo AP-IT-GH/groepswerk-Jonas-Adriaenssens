@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 5454641734323077478}
   m_Layer: 0
   m_Name: VR_Hand_Sphere
-  m_TagString: Untagged
+  m_TagString: Hand
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
