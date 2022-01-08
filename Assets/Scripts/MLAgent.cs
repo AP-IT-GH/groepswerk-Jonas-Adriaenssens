@@ -22,8 +22,10 @@ public class MLAgent : Agent
     public LayerMask aidLayer;
 
     private float timer;
-    private GameObject look; 
+    private GameObject look;
 
+
+    private int HitCounter = 0;
 
     // Start is called before the first frame update
     void Start()
@@ -77,9 +79,9 @@ public class MLAgent : Agent
         }
 
         //negative reward if no targets hit
-        if(scoreKeeper.getAiScore() == 0)
+        if(HitCounter == 0)
         {
-            AddReward(-0.0001f); 
+            AddReward(-0.001f); 
         }
 
     }
@@ -89,13 +91,15 @@ public class MLAgent : Agent
         if(scoreKeeper != null)
         {
             scoreKeeper.clearScores();
+            HitCounter = 0; 
         }    
 
     }
 
     internal void hit()
     {
-        AddReward(5f); 
+        AddReward(20f);
+        HitCounter++; 
     }
 
     public override void OnActionReceived(ActionBuffers actions)
@@ -116,7 +120,7 @@ public class MLAgent : Agent
             rotation.y = ArmRotationSpeed * (vectorAction[0] * 2 - 3) * Time.deltaTime;
             Debug.Log("Rotate Arm Horizontal - " + vectorAction[0] + " | " + rotation.y);
 
-            AddReward(0.0001f);
+            //AddReward(0.0001f);
 
         }
 
@@ -127,7 +131,7 @@ public class MLAgent : Agent
             Debug.Log("Rotate Arm Vertical - " + vectorAction[1] + " | " + rotation.z);
 
 
-            AddReward(0.0001f);
+            //AddReward(0.0001f);
 
         }
 
@@ -137,7 +141,7 @@ public class MLAgent : Agent
             shoot.Fire();
             Debug.Log("Shoot - " + vectorAction[2]);
 
-            // AddReward(0.0001f);
+            //AddReward(0.00001f);
 
         }
 
