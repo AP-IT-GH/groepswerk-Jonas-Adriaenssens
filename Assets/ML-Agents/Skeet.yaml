@@ -24,7 +24,8 @@ behaviors:
         gamma: 0.99
         encoding_size: 256
         learning_rate: 3.0e-4
-    keep_checkpoints: 5
+    keep_checkpoints: 50
+    checkpoint_interval: 100000
     max_steps: 1000000000000
     time_horizon: 3
     summary_freq: 20000
