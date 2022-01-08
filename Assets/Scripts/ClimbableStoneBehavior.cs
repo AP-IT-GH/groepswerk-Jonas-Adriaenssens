@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.XR.Interaction.Toolkit;
 
 public class ClimbableStoneBehavior : MonoBehaviour
 {
@@ -32,6 +33,8 @@ public class ClimbableStoneBehavior : MonoBehaviour
                 if(handDevices[0].TryGetFeatureValue(UnityEngine.XR.CommonUsages.gripButton, out triggerValue) && triggerValue)
                 {
                     Debug.Log("ClimbableStone - Grabbing");
+                    other.gameObject.transform.parent.parent.parent.parent.GetComponentInChildren<ActionBasedContinuousMoveProvider>().gravityApplicationMode = ContinuousMoveProviderBase.GravityApplicationMode.AttemptingMove;
+
                     Vector3 handPos = other.gameObject.transform.position;
 
                     if (Vector3.Distance(stonePos, handPos) > handDistanceBeforeMove)
@@ -40,9 +43,15 @@ public class ClimbableStoneBehavior : MonoBehaviour
                         other.gameObject.transform.parent.parent.parent.parent.position += diff;
                     }
                 }
-
-                //other.gameObject.transform.parent.parent.parent.parent.GetComponentInChildren<>();
             }
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.gameObject.tag == "Hand")
+        {
+            other.gameObject.transform.parent.parent.parent.parent.GetComponentInChildren<ActionBasedContinuousMoveProvider>().gravityApplicationMode = ContinuousMoveProviderBase.GravityApplicationMode.Immediately;
         }
     }
 }
