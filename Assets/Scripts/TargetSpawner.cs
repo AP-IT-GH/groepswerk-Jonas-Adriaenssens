@@ -11,7 +11,8 @@ public class TargetSpawner : MonoBehaviour
 
     [SerializeField]
     private bool TrainingStand = false;
-    private GameObject LastShot;
+    [HideInInspector]
+    public GameObject LastShot;
 
     float nextSpawn;
 

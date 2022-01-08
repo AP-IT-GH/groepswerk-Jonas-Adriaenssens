@@ -67,7 +67,7 @@ public class MLAgent : Agent
             {
                 
                 //reward for looking at target
-                AddReward(1f); 
+                AddReward(2f); 
 
                 if(Time.time - timer > 3.5f)
                 {  
@@ -94,6 +94,18 @@ public class MLAgent : Agent
         {
             // AddReward(-0.0001f); 
         }
+
+        //reward for moving toward target
+        Vector3 targetDir = spawner.LastShot.transform.position - transform.position;
+        float angle = Vector3.Angle(targetDir, transform.right);
+
+        //Debug.Log(angle); 
+
+
+        AddReward(-Mathf.Clamp(angle - 5, 0, 360)  / 360f);
+
+
+
 
     }
 
@@ -143,7 +155,7 @@ public class MLAgent : Agent
                 rotation.z = ArmRotationSpeed * -Time.deltaTime;
 
             }
-            Debug.Log("Rotate Arm Vertical - " + vectorAction[1] + " | " + rotation.z);
+            //Debug.Log("Rotate Arm Vertical - " + vectorAction[1] + " | " + rotation.z);
         }
 
         // shoot
@@ -156,13 +168,13 @@ public class MLAgent : Agent
 
         }
 
-        if(rotation != Vector3.zero)
+        /*if(rotation != Vector3.zero)
         {
             AddReward(0.001f);
         }else
         {
             AddReward(-0.001f);
-        }
+        }*/
 
         transform.parent.Rotate(0, rotation.y, 0);
         transform.Rotate(0, 0, rotation.z);

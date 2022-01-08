@@ -1,0 +1,38 @@
+{
+    "Skeet": {
+        "checkpoints": [
+            {
+                "steps": 499998,
+                "file_path": "results\\JTest4\\Skeet\\Skeet-499998.onnx",
+                "reward": null,
+                "creation_time": 1641680830.9488184,
+                "auxillary_file_paths": [
+                    "results\\JTest4\\Skeet\\Skeet-499998.pt"
+                ]
+            },
+            {
+                "steps": 598212,
+                "file_path": "results\\JTest4\\Skeet\\Skeet-598212.onnx",
+                "reward": null,
+                "creation_time": 1641681311.1981835,
+                "auxillary_file_paths": [
+                    "results\\JTest4\\Skeet\\Skeet-598212.pt"
+                ]
+            }
+        ],
+        "final_checkpoint": {
+            "steps": 598212,
+            "file_path": "results\\JTest4\\Skeet.onnx",
+            "reward": null,
+            "creation_time": 1641681311.1981835,
+            "auxillary_file_paths": [
+                "results\\JTest4\\Skeet\\Skeet-598212.pt"
+            ]
+        }
+    },
+    "metadata": {
+        "stats_format_version": "0.3.0",
+        "mlagents_version": "0.27.0",
+        "torch_version": "1.10.0"
+    }
+}
