@@ -86,13 +86,13 @@ public class MLAgent : Agent
         }
         else
         {
-            AddReward(-1f);
+            AddReward(-0.05f);
         }
 
         //negative reward if no targets hit
         if(scoreKeeper.getAiScore() == 0)
         {
-            AddReward(-0.0001f); 
+            // AddReward(-0.0001f); 
         }
 
     }
@@ -151,12 +151,22 @@ public class MLAgent : Agent
 
         if(rotation != Vector3.zero)
         {
-            AddReward(0.0001f);
+            AddReward(0.001f);
+        }else
+        {
+            AddReward(-0.001f);
         }
 
         transform.parent.Rotate(0, rotation.y, 0);
         transform.Rotate(0, 0, rotation.z);
-        // transform.localRotation = Quaternion.Euler(0, 0, Mathf.Clamp(transform.localRotation.eulerAngles.z, 0, 75));
+        if (transform.localRotation.eulerAngles.z < 100 && transform.localRotation.eulerAngles.z >= 0)
+        {
+            transform.localRotation = Quaternion.Euler(0, 0, Mathf.Clamp(transform.localRotation.eulerAngles.z, 1, 75));
+        }
+        else
+        {
+            transform.localRotation = Quaternion.Euler(0, 0, 1);
+        }
         // transform.Rotate(rotation);
     }
 
