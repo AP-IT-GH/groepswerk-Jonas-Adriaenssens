@@ -5930,7 +5930,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &665805809
 PrefabInstance:
@@ -18534,6 +18534,31 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5249124040867927976, guid: 651c14c764e34c94d8c63bb922cdfdb6, type: 3}
   m_PrefabInstance: {fileID: 6939310491397111202}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &6939310491397111204 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4398643983986521308, guid: 651c14c764e34c94d8c63bb922cdfdb6, type: 3}
+  m_PrefabInstance: {fileID: 6939310491397111202}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &6939310491397111205
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6939310491397111204}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad89f29833a1f8547a1410269d3bc4e3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  threshold: 0.1
+  deadZone: 0.025
+  onPressed:
+    m_PersistentCalls:
+      m_Calls: []
+  onReleased:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1001 &7910729193639181073
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -18600,6 +18625,31 @@ PrefabInstance:
     m_RemovedComponents:
     - {fileID: 7931349764552684142, guid: e4b6e094234d5d4479ef4b5b11e2110d, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: e4b6e094234d5d4479ef4b5b11e2110d, type: 3}
+--- !u!1 &7910729193639181074 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6943717944271031261, guid: e4b6e094234d5d4479ef4b5b11e2110d, type: 3}
+  m_PrefabInstance: {fileID: 7910729193639181073}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &7910729193639181075
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7910729193639181074}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 997fb7c10201f7848a52dd3a98cfdf00, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  threshold: 0.1
+  deadZone: 0.025
+  onPressed:
+    m_PersistentCalls:
+      m_Calls: []
+  onReleased:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!4 &8666677219292255160 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1553380452693076137, guid: e4b6e094234d5d4479ef4b5b11e2110d, type: 3}
