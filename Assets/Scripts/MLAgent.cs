@@ -186,6 +186,11 @@ public class MLAgent : Agent
         {
             transform.localRotation = Quaternion.Euler(0, 0, 1);
         }
+
+        if(transform.localRotation.eulerAngles.z > 70 || transform.localRotation.eulerAngles.z < 5) {
+            // Give penelty for keep looking up
+            AddReward(-0.001);
+        }
         // transform.Rotate(rotation);
     }
 
