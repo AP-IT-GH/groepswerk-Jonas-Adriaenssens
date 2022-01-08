@@ -189,7 +189,7 @@ public class MLAgent : Agent
 
         if(transform.localRotation.eulerAngles.z > 70 || transform.localRotation.eulerAngles.z < 5) {
             // Give penelty for keep looking up
-            AddReward(-0.001);
+            AddReward(-0.001f);
         }
         // transform.Rotate(rotation);
     }
