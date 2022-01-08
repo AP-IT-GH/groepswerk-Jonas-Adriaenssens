@@ -152,7 +152,11 @@ Deleted 50gb of log files from unity
 	env 256; 
 
 
-
-
-
+TEST 8: not split but implement "endepisode" (forgot this part apperently)
+		
+	256 env; 
+	5000 steps; 
+	
+	endepisode 1 minuut (60sec)
+	
 

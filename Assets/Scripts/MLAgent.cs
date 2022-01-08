@@ -23,6 +23,9 @@ public class MLAgent : Agent
 
     private float timer;
     private GameObject look;
+    private float StartTimeEpisode; 
+
+    public float EpisodeTimer = 60f; 
 
 
     private int HitCounter = 0;
@@ -35,6 +38,9 @@ public class MLAgent : Agent
             scoreKeeper = gameObject.GetComponentInParent<ScoreKeeper>();
 
         shoot = gameObject.GetComponent<Shoot>();
+
+        StartTimeEpisode = Time.time; 
+
     }
 
     internal void Miss()
@@ -84,6 +90,12 @@ public class MLAgent : Agent
             AddReward(-0.001f); 
         }
 
+        if (Time.time - StartTimeEpisode > EpisodeTimer)
+        {
+            EndEpisode(); 
+        }
+
+
     }
 
     public override void OnEpisodeBegin()
@@ -92,13 +104,15 @@ public class MLAgent : Agent
         {
             scoreKeeper.clearScores();
             HitCounter = 0; 
-        }    
+        }
+
+        StartTimeEpisode = Time.time; 
 
     }
 
     internal void hit()
     {
-        AddReward(20f);
+        AddReward(5f);
         HitCounter++; 
     }
 
@@ -120,7 +134,7 @@ public class MLAgent : Agent
             rotation.y = ArmRotationSpeed * (vectorAction[0] * 2 - 3) * Time.deltaTime;
             Debug.Log("Rotate Arm Horizontal - " + vectorAction[0] + " | " + rotation.y);
 
-            //AddReward(0.0001f);
+            AddReward(0.0001f);
 
         }
 
@@ -131,7 +145,7 @@ public class MLAgent : Agent
             Debug.Log("Rotate Arm Vertical - " + vectorAction[1] + " | " + rotation.z);
 
 
-            //AddReward(0.0001f);
+            AddReward(0.0001f);
 
         }
 
@@ -141,7 +155,7 @@ public class MLAgent : Agent
             shoot.Fire();
             Debug.Log("Shoot - " + vectorAction[2]);
 
-            //AddReward(0.00001f);
+            AddReward(0.00001f);
 
         }
 
