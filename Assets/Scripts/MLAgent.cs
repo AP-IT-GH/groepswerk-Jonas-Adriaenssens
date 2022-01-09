@@ -9,6 +9,7 @@ using UnityEngine.InputSystem;
 
 public class MLAgent : Agent
 {
+    public bool Training = false;
     [SerializeField]
     private Shoot shoot;
 
@@ -50,7 +51,8 @@ public class MLAgent : Agent
 
         if (Time.time - RestartTimer > 60)
         {
-            EndEpisode();
+            if (Training)
+                EndEpisode();
         }
 
         if (ScoreBoard != null)
@@ -70,7 +72,8 @@ public class MLAgent : Agent
                 AddReward(2f); 
 
                 if(Time.time - timer > 3.5f)
-                {  
+                {
+                    shoot.Fire();
                     // AddReward(-0.5f); 
                 }
 
@@ -161,7 +164,7 @@ public class MLAgent : Agent
         // shoot
         if(vectorAction[2] != 0)
         {
-            shoot.Fire();
+            // shoot.Fire();
             // Debug.Log("Shoot - " + vectorAction[2]);
 
             //AddReward(0.00001f);
