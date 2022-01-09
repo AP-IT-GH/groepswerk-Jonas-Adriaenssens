@@ -60,14 +60,14 @@ public class MLAgent : Agent
         RaycastHit hit; 
         if(Physics.Raycast(transform.position, transform.right, out hit, 30, aidLayer))
         {
-            AddReward(0.05f);
+            AddReward(0.5f);
             Debug.DrawLine(transform.position, hit.point); 
 
             if(hit.transform.gameObject == look)
             {
                 
                 //reward for looking at target
-                //AddReward(2f); 
+                AddReward(2f); 
 
                 if(Time.time - timer > 3.5f)
                 {  
@@ -164,7 +164,7 @@ public class MLAgent : Agent
             shoot.Fire();
             // Debug.Log("Shoot - " + vectorAction[2]);
 
-            AddReward(0.00001f);
+            //AddReward(0.00001f);
 
         }
 
