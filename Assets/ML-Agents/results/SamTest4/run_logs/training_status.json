@@ -1,0 +1,74 @@
+{
+    "Skeet": {
+        "checkpoints": [
+            {
+                "steps": 99998,
+                "file_path": "results\\SamTest4\\Skeet\\Skeet-99998.onnx",
+                "reward": null,
+                "creation_time": 1641729442.9026856,
+                "auxillary_file_paths": [
+                    "results\\SamTest4\\Skeet\\Skeet-99998.pt"
+                ]
+            },
+            {
+                "steps": 199997,
+                "file_path": "results\\SamTest4\\Skeet\\Skeet-199997.onnx",
+                "reward": null,
+                "creation_time": 1641729955.9614651,
+                "auxillary_file_paths": [
+                    "results\\SamTest4\\Skeet\\Skeet-199997.pt"
+                ]
+            },
+            {
+                "steps": 299998,
+                "file_path": "results\\SamTest4\\Skeet\\Skeet-299998.onnx",
+                "reward": null,
+                "creation_time": 1641730467.960798,
+                "auxillary_file_paths": [
+                    "results\\SamTest4\\Skeet\\Skeet-299998.pt"
+                ]
+            },
+            {
+                "steps": 399999,
+                "file_path": "results\\SamTest4\\Skeet\\Skeet-399999.onnx",
+                "reward": null,
+                "creation_time": 1641730969.9362748,
+                "auxillary_file_paths": [
+                    "results\\SamTest4\\Skeet\\Skeet-399999.pt"
+                ]
+            },
+            {
+                "steps": 499997,
+                "file_path": "results\\SamTest4\\Skeet\\Skeet-499997.onnx",
+                "reward": null,
+                "creation_time": 1641731469.9091346,
+                "auxillary_file_paths": [
+                    "results\\SamTest4\\Skeet\\Skeet-499997.pt"
+                ]
+            },
+            {
+                "steps": 556560,
+                "file_path": "results\\SamTest4\\Skeet\\Skeet-556560.onnx",
+                "reward": null,
+                "creation_time": 1641731754.7777855,
+                "auxillary_file_paths": [
+                    "results\\SamTest4\\Skeet\\Skeet-556560.pt"
+                ]
+            }
+        ],
+        "final_checkpoint": {
+            "steps": 556560,
+            "file_path": "results\\SamTest4\\Skeet.onnx",
+            "reward": null,
+            "creation_time": 1641731754.7777855,
+            "auxillary_file_paths": [
+                "results\\SamTest4\\Skeet\\Skeet-556560.pt"
+            ]
+        }
+    },
+    "metadata": {
+        "stats_format_version": "0.3.0",
+        "mlagents_version": "0.27.0",
+        "torch_version": "1.10.0"
+    }
+}

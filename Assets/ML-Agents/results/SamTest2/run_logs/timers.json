@@ -1,0 +1,49 @@
+{
+    "name": "root",
+    "metadata": {
+        "timer_format_version": "0.1.0",
+        "start_time_seconds": "1641728658",
+        "python_version": "3.9.7 (default, Sep 16 2021, 16:59:28) [MSC v.1916 64 bit (AMD64)]",
+        "command_line_arguments": "C:\\Users\\jonas\\anaconda3\\envs\\Unity_ML\\Scripts\\mlagents-learn Skeet.yaml --run-id SamTest2 --resume",
+        "mlagents_version": "0.27.0",
+        "mlagents_envs_version": "0.27.0",
+        "communication_protocol_version": "1.5.0",
+        "pytorch_version": "1.10.0",
+        "numpy_version": "1.21.2",
+        "end_time_seconds": "1641728667"
+    },
+    "total": 8.880889,
+    "count": 1,
+    "self": 0.018461399999999628,
+    "children": {
+        "run_training.setup": {
+            "total": 0.10199409999999998,
+            "count": 1,
+            "self": 0.10199409999999998
+        },
+        "TrainerController.start_learning": {
+            "total": 8.7604335,
+            "count": 1,
+            "self": 0.00010369999999859658,
+            "children": {
+                "TrainerController._reset_env": {
+                    "total": 8.390602300000001,
+                    "count": 1,
+                    "self": 8.390602300000001
+                },
+                "TrainerController._save_models": {
+                    "total": 0.36972749999999976,
+                    "count": 1,
+                    "self": 0.00805779999999956,
+                    "children": {
+                        "RLTrainer._checkpoint": {
+                            "total": 0.3616697000000002,
+                            "count": 1,
+                            "self": 0.3616697000000002
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

@@ -42,7 +42,7 @@ public class MLAgent : Agent
 
     internal void Miss()
     {
-        AddReward(-2f); 
+        //AddReward(-2f); 
     }
 
     // Update is called once per frame
@@ -71,7 +71,7 @@ public class MLAgent : Agent
                 //reward for looking at target
                 AddReward(2f); 
 
-                if(Time.time - timer > 3.5f)
+                if(Time.time - timer > 0.5f)
                 {
                     shoot.Fire();
                     // AddReward(-0.5f); 
@@ -105,7 +105,7 @@ public class MLAgent : Agent
         //Debug.Log(angle); 
 
 
-        AddReward(-Mathf.Clamp(angle - 5, 0, 360)  / 360f);
+        AddReward(-Mathf.Clamp(angle - 1, 0, 360)  / 360f);
 
 
 
@@ -125,7 +125,8 @@ public class MLAgent : Agent
 
     internal void hit()
     {
-        AddReward(4f); 
+        AddReward(4f);
+        RestartTimer = Time.time; 
     }
 
     public override void OnActionReceived(ActionBuffers actions)
