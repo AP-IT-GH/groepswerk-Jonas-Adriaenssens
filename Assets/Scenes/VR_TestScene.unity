@@ -24408,6 +24408,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1977064786}
     m_Modifications:
+    - target: {fileID: 478011657, guid: 1d5c6540ecbd09d43a00f9066d8bc70a, type: 3}
+      propertyPath: Flash
+      value: 
+      objectReference: {fileID: 198000012944515248, guid: 9defeac88977c0d448aa4541073ee9e4, type: 3}
     - target: {fileID: 1491904369761756308, guid: 1d5c6540ecbd09d43a00f9066d8bc70a, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -24456,6 +24460,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Crossbow Variant
       objectReference: {fileID: 0}
+    - target: {fileID: 2730847745197037540, guid: 1d5c6540ecbd09d43a00f9066d8bc70a, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 19d24c2f18c5d4747b006845239d1aed, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1d5c6540ecbd09d43a00f9066d8bc70a, type: 3}
 --- !u!1 &1487704657
