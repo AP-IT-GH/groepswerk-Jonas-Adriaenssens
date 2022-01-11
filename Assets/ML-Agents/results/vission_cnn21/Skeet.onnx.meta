@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/ML-Agents/results/vission_cnn21/Skeet/Skeet-3499999.onnx.meta
+guid: 2a80c9d4b890c2b409aa43189f8ca77c
+========
+guid: 61fa0984f7da3e24cb3702bc42453ed0
+>>>>>>>> Risky2_hit:Assets/ML-Agents/results/vission_cnn21/Skeet.onnx.meta
+ScriptedImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 2
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+  script: {fileID: 11500000, guid: 683b6cb6d0a474744822c888b46772c9, type: 3}
+  optimizeModel: 1
+  forceArbitraryBatchSize: 1
+  treatErrorsAsWarnings: 0
+  importMode: 1

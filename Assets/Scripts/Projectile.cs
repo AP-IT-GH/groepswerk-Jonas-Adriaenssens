@@ -45,10 +45,11 @@ public class Projectile : MonoBehaviour
     {
         if(collision.gameObject.tag == "Target")
         {
+            Debug.Log("Hit");
             if(weapon.gameObject.tag == "AI")
             {
                 weapon.gameObject.GetComponent<MLAgent>().hit();
-                ScoreKeeper.instance.playerHit(); 
+                ScoreKeeper.instance.aiHit(); 
             } else
 
             {
@@ -63,11 +64,8 @@ public class Projectile : MonoBehaviour
             {
                 collision.gameObject.GetComponentInParent<StillTargetSpawner>().gameObject.SetActive(false);
             }
-
-
-            Destroy(gameObject);       
-           
         }
+        Destroy(gameObject);
 
     }
 
