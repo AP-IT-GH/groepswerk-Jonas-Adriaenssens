@@ -17,12 +17,14 @@ public class Shoot : Weapon
 
         if (Time.time - lastShot <= 1f)
         {
-            Debug.Log("No shoot");
+            // Debug.Log("No shoot");
             return;
         }
 
         GameObject newProjectile = Instantiate(projectile, bulletSpawn.transform.position, bulletSpawn.transform.rotation);
-        newProjectile.transform.localScale = newProjectile.transform.localScale * 2f;
+        newProjectile.transform.localScale = newProjectile.transform.localScale * 10f;
+        newProjectile.gameObject.tag = "AI"; 
+
 
         Flash.Play();
         sound.Play();

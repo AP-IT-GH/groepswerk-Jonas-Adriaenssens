@@ -83,7 +83,7 @@ AudioSource:
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
-  Priority: 128
+  Priority: 217
   DopplerLevel: 1
   MinDistance: 1
   MaxDistance: 500
@@ -121,7 +121,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0
+      value: 0.65
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -173,7 +173,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 94f3b950d646e814fb65037718f6d0a4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  TTL: 5
+  TTL: 8
+  OutlineTime: 6
+  test: {x: 0, y: 0, z: 0}
+  outline: {fileID: 1755289912482509722}
 --- !u!1 &873874837684542540
 GameObject:
   m_ObjectHideFlags: 0
@@ -363,3 +366,14 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4751843331798888587, guid: f869abb8cccd8dd42bdf58012daaaf33, type: 3}
   m_PrefabInstance: {fileID: 742771298475071398}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1755289912482509722 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1302332420068926524, guid: f869abb8cccd8dd42bdf58012daaaf33, type: 3}
+  m_PrefabInstance: {fileID: 742771298475071398}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
