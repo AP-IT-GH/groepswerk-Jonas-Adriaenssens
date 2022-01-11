@@ -92,7 +92,7 @@ GameObject:
   - component: {fileID: 3397738268012247786}
   - component: {fileID: 2217805156238703263}
   - component: {fileID: 3900849968664842064}
-  - component: {fileID: 7842235566106448336}
+  - component: {fileID: 240400471460730387}
   m_Layer: 0
   m_Name: grabableStone
   m_TagString: climableStone
@@ -144,7 +144,7 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.025
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &7842235566106448336
+--- !u!114 &240400471460730387
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -153,7 +153,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 5260343164174127894}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 05a18d036760e854c8b50333929b9562, type: 3}
+  m_Script: {fileID: 11500000, guid: 0529248b8ccd15f46827a510b8c6e8d9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   handDistanceBeforeMove: 0.001
