@@ -13,7 +13,7 @@ public class Shoot : Weapon
 
     public void Fire()
     {
-        // Debug.Log("Shoot.Fire() called");
+        Debug.Log("Shoot.Fire() called");
 
         if (Time.time - lastShot <= 1f)
         {
@@ -22,7 +22,9 @@ public class Shoot : Weapon
         }
 
         GameObject newProjectile = Instantiate(projectile, bulletSpawn.transform.position, bulletSpawn.transform.rotation);
-        newProjectile.transform.localScale = newProjectile.transform.localScale * 2f;
+        newProjectile.transform.localScale = newProjectile.transform.localScale * 10f;
+        newProjectile.gameObject.tag = "AI"; 
+
 
         Flash.Play();
         sound.Play();

@@ -12,6 +12,7 @@ TagManager:
   - AI
   - AgentScore
   - PlayerScore
+  - LookAt
   layers:
   - Default
   - TransparentFX
@@ -23,8 +24,8 @@ TagManager:
   - Turret
   - 
   - TrainingAid
-  - 
-  - 
+  - mltarget
+  - target
   - 
   - 
   - 

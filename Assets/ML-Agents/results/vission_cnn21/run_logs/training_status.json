@@ -1,0 +1,101 @@
+{
+    "Skeet": {
+        "checkpoints": [
+            {
+                "steps": 4779,
+                "file_path": "results\\vission_cnn21\\Skeet\\Skeet-4779.onnx",
+                "reward": null,
+                "creation_time": 1641913764.0523434,
+                "auxillary_file_paths": [
+                    "results\\vission_cnn21\\Skeet\\Skeet-4779.pt"
+                ]
+            },
+            {
+                "steps": 49997,
+                "file_path": "results\\vission_cnn21\\Skeet\\Skeet-49997.onnx",
+                "reward": null,
+                "creation_time": 1641914044.0961099,
+                "auxillary_file_paths": [
+                    "results\\vission_cnn21\\Skeet\\Skeet-49997.pt"
+                ]
+            },
+            {
+                "steps": 99999,
+                "file_path": "results\\vission_cnn21\\Skeet\\Skeet-99999.onnx",
+                "reward": null,
+                "creation_time": 1641914292.9278028,
+                "auxillary_file_paths": [
+                    "results\\vission_cnn21\\Skeet\\Skeet-99999.pt"
+                ]
+            },
+            {
+                "steps": 149999,
+                "file_path": "results\\vission_cnn21\\Skeet\\Skeet-149999.onnx",
+                "reward": null,
+                "creation_time": 1641914540.9966645,
+                "auxillary_file_paths": [
+                    "results\\vission_cnn21\\Skeet\\Skeet-149999.pt"
+                ]
+            },
+            {
+                "steps": 199999,
+                "file_path": "results\\vission_cnn21\\Skeet\\Skeet-199999.onnx",
+                "reward": -94.73203840386122,
+                "creation_time": 1641914781.5637817,
+                "auxillary_file_paths": [
+                    "results\\vission_cnn21\\Skeet\\Skeet-199999.pt"
+                ]
+            },
+            {
+                "steps": 249997,
+                "file_path": "results\\vission_cnn21\\Skeet\\Skeet-249997.onnx",
+                "reward": 13.174924108199775,
+                "creation_time": 1641915026.6497204,
+                "auxillary_file_paths": [
+                    "results\\vission_cnn21\\Skeet\\Skeet-249997.pt"
+                ]
+            },
+            {
+                "steps": 299999,
+                "file_path": "results\\vission_cnn21\\Skeet\\Skeet-299999.onnx",
+                "reward": null,
+                "creation_time": 1641915261.5246842,
+                "auxillary_file_paths": [
+                    "results\\vission_cnn21\\Skeet\\Skeet-299999.pt"
+                ]
+            },
+            {
+                "steps": 349999,
+                "file_path": "results\\vission_cnn21\\Skeet\\Skeet-349999.onnx",
+                "reward": null,
+                "creation_time": 1641915508.1483269,
+                "auxillary_file_paths": [
+                    "results\\vission_cnn21\\Skeet\\Skeet-349999.pt"
+                ]
+            },
+            {
+                "steps": 365292,
+                "file_path": "results\\vission_cnn21\\Skeet\\Skeet-365292.onnx",
+                "reward": 14.633034020662308,
+                "creation_time": 1641915582.8013892,
+                "auxillary_file_paths": [
+                    "results\\vission_cnn21\\Skeet\\Skeet-365292.pt"
+                ]
+            }
+        ],
+        "final_checkpoint": {
+            "steps": 365292,
+            "file_path": "results\\vission_cnn21\\Skeet.onnx",
+            "reward": 14.633034020662308,
+            "creation_time": 1641915582.8013892,
+            "auxillary_file_paths": [
+                "results\\vission_cnn21\\Skeet\\Skeet-365292.pt"
+            ]
+        }
+    },
+    "metadata": {
+        "stats_format_version": "0.3.0",
+        "mlagents_version": "0.27.0",
+        "torch_version": "1.10.0"
+    }
+}

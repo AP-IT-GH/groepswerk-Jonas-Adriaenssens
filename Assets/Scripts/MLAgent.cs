@@ -13,6 +13,8 @@ public class MLAgent : Agent
     [SerializeField]
     private Shoot shoot;
 
+    public CameraTexture cameraTexture;
+
     public TextMeshPro ScoreBoard;
 
     public float RotationSpeed;
@@ -23,67 +25,134 @@ public class MLAgent : Agent
 
     public LayerMask aidLayer;
 
+    public bool HardMode = false;
+    private bool NoRotation;
+
     private float timer;
-    private GameObject look; 
+    private GameObject look;
 
     private float RestartTimer;
     public TargetSpawner spawner;
+
+    int loopTime = 0;
 
 
     // Start is called before the first frame update
     void Start()
     {
-
         if (!scoreKeeper)
             scoreKeeper = gameObject.GetComponentInParent<ScoreKeeper>();
 
         shoot = gameObject.GetComponent<Shoot>();
+        StartCoroutine(cameraLoop());
+        StartCoroutine(epochTime());
     }
 
     internal void Miss()
     {
-        //AddReward(-2f); 
+        AddReward(-2f);
+    }
+
+    IEnumerator cameraLoop()
+    {
+        while (true)
+        {
+            // Debug.Log("Running cameraloop");
+            try
+            {
+                caluclateScore();
+                var borderCount = cameraTexture.GetFromBorder(60);
+                if(borderCount > 0)
+                {
+                    if (Training)
+                    {
+                        AddReward(15);
+                        EndEpisode();
+                    }
+                    else
+                    {
+                        shoot.Fire();
+                    }
+                }
+                if (HardMode)
+                {
+                    if(cameraTexture.GetFromBorder(0) == 0)
+                    {
+                        NoRotation = true;
+                    }
+                    else
+                    {
+                        NoRotation = false;
+                    }
+                }
+            }
+            catch { }
+            yield return new WaitForSeconds(0.5f);
+        }
+    }
+
+    void caluclateScore(int border = 0)
+    {
+        var borderCount = cameraTexture.GetFromBorder(border);
+        if(borderCount != -1)
+        {
+            if(borderCount == 0)
+            {
+                float m = (128f / 2f) - border;
+                m = m / 128f;
+                AddReward((-m) + 0.215f);
+            }
+            else
+            {
+                caluclateScore(border + 4);
+            }
+        }
+    }
+
+    IEnumerator epochTime()
+    {
+        while (Training)
+        {
+            yield return new WaitForSeconds(1);
+            loopTime++;
+            if (loopTime >= 60)
+            {
+                AddReward(-5);
+                EndEpisode();
+            }
+        }
     }
 
     // Update is called once per frame
     void Update()
     {
-
-        if (Time.time - RestartTimer > 60)
-        {
-            if (Training)
-                EndEpisode();
-        }
-
         if (ScoreBoard != null)
             ScoreBoard.text = GetCumulativeReward().ToString("f4");
 
         //helping with training throug raycast
-        RaycastHit hit; 
-        if(Physics.Raycast(transform.position, transform.right, out hit, 30, aidLayer))
+        RaycastHit hit;
+        if (Physics.Raycast(transform.position, transform.right, out hit, 30, aidLayer))
         {
             AddReward(0.5f);
-            Debug.DrawLine(transform.position, hit.point); 
+            Debug.DrawLine(transform.position, hit.point);
 
-            if(hit.transform.gameObject == look)
+            if (hit.transform.gameObject == look)
             {
-                
+
                 //reward for looking at target
-                AddReward(2f); 
+                AddReward(2f);
 
-                if(Time.time - timer > 0.5f)
-                {
-                    shoot.Fire();
-                    // AddReward(-0.5f); 
-                }
+                shoot.Fire();
+                // AddReward(-0.5f); 
 
-            } else
+            }
+            else
             {
                 look = hit.transform.gameObject;
 
-                AddReward(0.01f); 
+                AddReward(0.01f);
 
-                timer = Time.time; 
+                timer = Time.time;
             }
 
         }
@@ -93,7 +162,7 @@ public class MLAgent : Agent
         }
 
         //negative reward if no targets hit
-        if(scoreKeeper.getAiScore() == 0)
+        if (scoreKeeper.getAiScore() == 0)
         {
             // AddReward(-0.0001f); 
         }
@@ -105,7 +174,7 @@ public class MLAgent : Agent
         //Debug.Log(angle); 
 
 
-        AddReward(-Mathf.Clamp(angle - 1, 0, 360)  / 360f);
+        AddReward(-Mathf.Clamp(angle - 5, 0, 360) / 360f);
 
 
 
@@ -119,6 +188,11 @@ public class MLAgent : Agent
         {
             scoreKeeper.clearScores();
         }
+        loopTime = 0;
+
+        transform.localRotation = Quaternion.identity;
+        transform.parent.localRotation = Quaternion.identity; 
+
         RestartTimer = Time.time;
         spawner.Restart();
     }
@@ -126,7 +200,6 @@ public class MLAgent : Agent
     internal void hit()
     {
         AddReward(4f);
-        RestartTimer = Time.time; 
     }
 
     public override void OnActionReceived(ActionBuffers actions)
@@ -149,13 +222,14 @@ public class MLAgent : Agent
         }
 
         // vertical rotation arm    - X
-        if(vectorAction[1] != 0)
+        if (vectorAction[1] != 0)
         {
-            if(vectorAction[1] == 1)
+            if (vectorAction[1] == 1)
             {
                 rotation.z = ArmRotationSpeed * Time.deltaTime;
             }
-            else if (vectorAction[1] == 2){
+            else if (vectorAction[1] == 2)
+            {
                 rotation.z = ArmRotationSpeed * -Time.deltaTime;
 
             }
@@ -163,7 +237,7 @@ public class MLAgent : Agent
         }
 
         // shoot
-        if(vectorAction[2] != 0)
+        if (vectorAction[2] != 0)
         {
             // shoot.Fire();
             // Debug.Log("Shoot - " + vectorAction[2]);
@@ -180,18 +254,25 @@ public class MLAgent : Agent
             AddReward(-0.001f);
         }*/
 
+        if (NoRotation)
+        {
+            rotation.y = 1;
+            rotation.z = 0;
+        }
+
         transform.parent.Rotate(0, rotation.y, 0);
         transform.Rotate(0, 0, rotation.z);
         if (transform.localRotation.eulerAngles.z < 100 && transform.localRotation.eulerAngles.z >= 0)
         {
-            transform.localRotation = Quaternion.Euler(0, 0, Mathf.Clamp(transform.localRotation.eulerAngles.z, 1, 75));
+            transform.localRotation = Quaternion.Euler(0, 0, Mathf.Clamp(transform.localRotation.eulerAngles.z, 1, 40));
         }
         else
         {
             transform.localRotation = Quaternion.Euler(0, 0, 1);
         }
 
-        if(transform.localRotation.eulerAngles.z > 70 || transform.localRotation.eulerAngles.z < 5) {
+        if (transform.localRotation.eulerAngles.z > 35 || transform.localRotation.eulerAngles.z < 5)
+        {
             // Give penelty for keep looking up
             AddReward(-0.001f);
         }
@@ -204,9 +285,9 @@ public class MLAgent : Agent
 
         // Debug.Log("Heuristic");
         var actions = actionsOut.DiscreteActions;
-        
+
         actions[0] = 0;
-        if(keyboard.xKey.isPressed)
+        if (keyboard.xKey.isPressed)
         {
             // Debug.Log("Input - Arm Turn Left");
             actions[0] = 1;     // left turn
@@ -217,7 +298,7 @@ public class MLAgent : Agent
             actions[0] = 2;     // turn right
         }
 
-        
+
         actions[1] = 0;
         if (keyboard.upArrowKey.isPressed)
         {

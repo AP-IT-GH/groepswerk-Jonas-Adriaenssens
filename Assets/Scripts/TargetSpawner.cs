@@ -20,6 +20,16 @@ public class TargetSpawner : MonoBehaviour
     {
         d();
     }
+
+    IEnumerator spawn()
+    {
+        while (true)
+        {
+            yield return new WaitForSeconds(Random.Range(MinTimeWait, MaxTimeWait));
+            Spawn();
+        }
+    }
+
     public void d()
     {
         nextSpawn = Time.time + Random.Range(MinTimeWait, MaxTimeWait);
@@ -44,7 +54,7 @@ public class TargetSpawner : MonoBehaviour
 
         v.transform.position = transform.position;
         v.transform.GetChild(0).gameObject.SetActive(true);
-        v.GetComponentInChildren<StillTargetSpawner>().TTL = 50000;
+        // v.GetComponentInChildren<StillTargetSpawner>().TTL = 50000;
         LastShot = v.GetComponentInChildren<StillTargetSpawner>().gameObject;
         d();
     }
