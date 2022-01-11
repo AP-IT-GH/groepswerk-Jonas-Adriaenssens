@@ -12,6 +12,8 @@ TagManager:
   - AI
   - AgentScore
   - PlayerScore
+  - climableStone
+  - Hand
   - LookAt
   layers:
   - Default

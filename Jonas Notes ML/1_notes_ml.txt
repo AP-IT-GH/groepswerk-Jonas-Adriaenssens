@@ -134,13 +134,29 @@ step grootte = 10000 en 2000 geweest
 
 		set to 5000 steps
 
+		no significant improvement
 
 
+Deleted 50gb of log files from unity
 
 
+>step 4: everything is as it should be now (all like normal gameplay)
+
+	env 256 ; edit rewards a bit
+		(pray it works)
 
 
+	env 512; edit rewards a bit
+		hope this will improve => crash 512 is too much
+
+	env 256; 
 
 
-
+TEST 8: not split but implement "endepisode" (forgot this part apperently)
+		
+	256 env; 
+	5000 steps; 
+	
+	endepisode 1 minuut (60sec)
+	
 

@@ -1,0 +1,29 @@
+{
+    "Skeet": {
+        "checkpoints": [
+            {
+                "steps": 9153,
+                "file_path": "results\\beau01\\Skeet\\Skeet-9153.onnx",
+                "reward": null,
+                "creation_time": 1641554090.637499,
+                "auxillary_file_paths": [
+                    "results\\beau01\\Skeet\\Skeet-9153.pt"
+                ]
+            }
+        ],
+        "final_checkpoint": {
+            "steps": 9153,
+            "file_path": "results\\beau01\\Skeet.onnx",
+            "reward": null,
+            "creation_time": 1641554090.637499,
+            "auxillary_file_paths": [
+                "results\\beau01\\Skeet\\Skeet-9153.pt"
+            ]
+        }
+    },
+    "metadata": {
+        "stats_format_version": "0.3.0",
+        "mlagents_version": "0.27.0",
+        "torch_version": "1.10.0"
+    }
+}
