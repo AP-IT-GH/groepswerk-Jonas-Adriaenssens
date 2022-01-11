@@ -104,7 +104,7 @@ PrefabInstance:
     - target: {fileID: 8296172669276728082, guid: 4a36f3a1e6f34494f8059f8dd3df1777, type: 3}
       propertyPath: m_audioClip
       value: 
-      objectReference: {fileID: 8300000, guid: d42381d14bdbab64bb6b4091b5543005, type: 3}
+      objectReference: {fileID: 8300000, guid: 49504d39119e1a3419ae64e4a0e288f9, type: 3}
     - target: {fileID: 8296172669276728082, guid: 4a36f3a1e6f34494f8059f8dd3df1777, type: 3}
       propertyPath: m_PlayOnAwake
       value: 0
@@ -172,8 +172,8 @@ MonoBehaviour:
   bulletSpawn: {fileID: 447899851}
   recoilForce: 0
   damage: 0
-  bulletPrefab: {fileID: 6551660049636897330, guid: 9cf91ed6a1c1f3542abba4523b859489, type: 3}
-  Flash: {fileID: 0}
+  bulletPrefab: {fileID: 6551660049636897330, guid: cc8c9ebffdaa24b4db2f203d3492bf0b, type: 3}
+  Flash: {fileID: 198000012944515248, guid: 9defeac88977c0d448aa4541073ee9e4, type: 3}
   sound: {fileID: 2730847745197037540}
 --- !u!114 &478011658
 MonoBehaviour:

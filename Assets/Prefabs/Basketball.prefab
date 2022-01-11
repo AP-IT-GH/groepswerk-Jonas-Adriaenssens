@@ -64,7 +64,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 6e009592497ea7842b0058af0737a24e, type: 2}
+  - {fileID: 2100000, guid: 1a352dea78cdc21448a73fc757ce5d15, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -93,7 +93,7 @@ SphereCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8189447275529308753}
-  m_Material: {fileID: 13400000, guid: 2f227c580c9912744b592819b612d694, type: 2}
+  m_Material: {fileID: 13400000, guid: acb78fcb0450e4fb8b9fb4a2efa13fac, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
@@ -335,7 +335,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 8189447275529308753}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 931864e0add3201488f46a8f0c66ad39, type: 3}
+  m_Script: {fileID: 11500000, guid: cc6abab852eb34e4c92f41a94ed21e0e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   audiosource: {fileID: 8189447275529308761}

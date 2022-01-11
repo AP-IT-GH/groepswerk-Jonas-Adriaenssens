@@ -153,6 +153,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 5260343164174127894}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1ea1a2339abbaf64abe40a5f4f318ed2, type: 3}
+  m_Script: {fileID: 11500000, guid: 05a18d036760e854c8b50333929b9562, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  handDistanceBeforeMove: 0.001
