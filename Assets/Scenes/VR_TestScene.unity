@@ -8618,6 +8618,8 @@ MonoBehaviour:
   poolStill: {fileID: 1240596156}
   MinTimeWait: 2
   MaxTimeWait: 5
+  TrainingStand: 0
+  LastShot: {fileID: 0}
 --- !u!4 &523114626
 Transform:
   m_ObjectHideFlags: 0
@@ -36770,6 +36772,22 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1269154888}
     m_Modifications:
+    - target: {fileID: 717875141786520315, guid: ac77f6c760985d24ca7c974e533e98e6, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 0c634d43759f96547a2894e2744199f1, type: 2}
+    - target: {fileID: 3642303102042069100, guid: ac77f6c760985d24ca7c974e533e98e6, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 8a897c2a95630964fb84accc2e5c6772, type: 2}
+    - target: {fileID: 3642303102744415577, guid: ac77f6c760985d24ca7c974e533e98e6, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 8a897c2a95630964fb84accc2e5c6772, type: 2}
+    - target: {fileID: 3642303102868840632, guid: ac77f6c760985d24ca7c974e533e98e6, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 8a897c2a95630964fb84accc2e5c6772, type: 2}
     - target: {fileID: 8155447693745733104, guid: ac77f6c760985d24ca7c974e533e98e6, type: 3}
       propertyPath: m_Name
       value: BasketballField
