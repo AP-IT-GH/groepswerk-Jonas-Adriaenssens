@@ -16,6 +16,9 @@ public class Shotgun : Weapon
 
     protected override void Shoot()
     {
+        if (PhysicsButton.GamePaused)
+            return;
+
         base.Shoot();
 
         Flash.Play();

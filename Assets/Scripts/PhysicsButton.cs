@@ -8,6 +8,7 @@ public class PhysicsButton : MonoBehaviour
     [SerializeField] private float threshold = 0.1f;
     [SerializeField] private float deadZone = 0.025f;
 
+    public static bool GamePaused;
     private bool _isPressed;
     private Vector3 _startPos;
     private ConfigurableJoint _joint;
@@ -17,6 +18,7 @@ public class PhysicsButton : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        GamePaused = false;
         _startPos = transform.localPosition;
         _joint = GetComponent<ConfigurableJoint>();
     }
@@ -24,6 +26,8 @@ public class PhysicsButton : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        Debug.Log("PhysicsButton - Update: getVal:" + GetValue() + " | thres:" + threshold);
+
         if (!_isPressed && GetValue() + threshold >= 1)
             Pressed();
         if (_isPressed && GetValue() - threshold <= 0)
@@ -46,7 +50,7 @@ public class PhysicsButton : MonoBehaviour
         return Mathf.Clamp(value, -1f, 1f);
     }
 
-    private void Pressed()
+    protected virtual void Pressed()
     {
         _isPressed = true;
         onPressed.Invoke();
