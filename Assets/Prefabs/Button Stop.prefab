@@ -45,8 +45,8 @@ GameObject:
   - component: {fileID: 8665084947918824694}
   - component: {fileID: 3711966299546262020}
   - component: {fileID: 7241913196885734413}
-  - component: {fileID: 2871337968964317771}
   - component: {fileID: 337335312450023017}
+  - component: {fileID: 7898803008503210818}
   m_Layer: 0
   m_Name: Button
   m_TagString: Untagged
@@ -147,26 +147,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 122
   m_CollisionDetection: 0
---- !u!114 &2871337968964317771
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6943717944271031261}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5d36a1d14566c074d80c93ff7be69871, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  threshold: 0.1
-  deadZone: 0.025
-  onPressed:
-    m_PersistentCalls:
-      m_Calls: []
-  onReleased:
-    m_PersistentCalls:
-      m_Calls: []
 --- !u!153 &337335312450023017
 ConfigurableJoint:
   m_ObjectHideFlags: 0
@@ -179,7 +159,7 @@ ConfigurableJoint:
   m_Anchor: {x: 0, y: 0.9999828, z: 0}
   m_Axis: {x: 1, y: 0, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: 0, y: 1.1659875, z: 0}
+  m_ConnectedAnchor: {x: 56.295, y: -26.997103, z: -52.552}
   serializedVersion: 2
   m_SecondaryAxis: {x: 0, y: 1, z: 0}
   m_XMotion: 0
@@ -263,6 +243,26 @@ ConfigurableJoint:
   m_EnablePreprocessing: 1
   m_MassScale: 1
   m_ConnectedMassScale: 1
+--- !u!114 &7898803008503210818
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6943717944271031261}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 69043cf0841b4b84abeb3f5a360207d6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  threshold: 0.1
+  deadZone: 0.025
+  onPressed:
+    m_PersistentCalls:
+      m_Calls: []
+  onReleased:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &7347431020557912463
 GameObject:
   m_ObjectHideFlags: 0

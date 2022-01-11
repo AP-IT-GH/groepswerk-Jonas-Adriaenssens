@@ -109,7 +109,7 @@ GameObject:
   - component: {fileID: 7986457074047788293}
   - component: {fileID: 2406430193306581766}
   - component: {fileID: 5661436342208379415}
-  - component: {fileID: 346193896774466947}
+  - component: {fileID: 7996738753356504827}
   m_Layer: 0
   m_Name: Button
   m_TagString: Untagged
@@ -222,7 +222,7 @@ ConfigurableJoint:
   m_Anchor: {x: 0, y: 0.9999828, z: 0}
   m_Axis: {x: 1, y: 0, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: 0, y: 1.1659875, z: 0}
+  m_ConnectedAnchor: {x: 0, y: 0.174898, z: 0}
   serializedVersion: 2
   m_SecondaryAxis: {x: 0, y: 1, z: 0}
   m_XMotion: 0
@@ -306,7 +306,7 @@ ConfigurableJoint:
   m_EnablePreprocessing: 1
   m_MassScale: 1
   m_ConnectedMassScale: 1
---- !u!114 &346193896774466947
+--- !u!114 &7996738753356504827
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -315,7 +315,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 4398643983986521308}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5d36a1d14566c074d80c93ff7be69871, type: 3}
+  m_Script: {fileID: 11500000, guid: 9915692e539cc4749a89e79b36ef5670, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   threshold: 0.1
